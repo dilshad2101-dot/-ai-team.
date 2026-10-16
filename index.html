@@ -1,37 +1,206 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#12372f"><title>فريق العمل الذكي</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#12372f">
+<title>فريق العمل الذكي</title>
 <style>
-:root{--green:#176b58;--dark:#12372f;--bg:#f3f7f5;--line:#e0e9e4;--muted:#71817a}*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:#1c3029}button,textarea,input{font:inherit}.layout{display:grid;grid-template-columns:235px 1fr;min-height:100vh}.side{background:var(--dark);color:white;padding:25px 16px}.brand{display:flex;align-items:center;gap:10px;margin-bottom:30px}.logo{background:#8de0bd;color:#12372f;border-radius:13px;width:42px;height:42px;display:grid;place-items:center;font-size:24px}.brand b{font-size:15px}.brand small{display:block;color:#b8d4ca;font-size:11px;margin-top:5px}.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;color:#d4e4dd;text-align:right;padding:13px;border-radius:10px}.nav button.active,.nav button:hover{background:#285448;color:white}.side-note{margin-top:50px;padding:14px;background:#20483d;border-radius:13px;color:#d3e5dd;font-size:12px;line-height:1.9}main{padding:25px;max-width:1200px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;font-size:12px;color:var(--muted)}.user{display:flex;align-items:center;gap:10px}.avatar{border-radius:50%;background:#d9eee5;color:var(--green);width:36px;height:36px;display:grid;place-items:center;font-weight:bold}.hero{background:linear-gradient(120deg,#12372f,#19745e);color:white;border-radius:20px;padding:30px;display:flex;justify-content:space-between;gap:18px;align-items:center}.hero h1{font-size:clamp(23px,3vw,32px);margin:0 0 12px}.hero p{font-size:13px;line-height:1.9;color:#d5e9e1;margin:0;max-width:680px}.pill{display:inline-block;margin-top:17px;padding:8px 12px;border-radius:20px;background:#ffffff19;font-size:11px}.star{font-size:64px;color:#a4e8cc;padding:0 12px}.section-title{margin:26px 0 14px;font-size:16px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat,.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:17px}.stat b{font-size:23px;display:block}.stat small{font-size:11px;color:var(--muted);display:block;margin-top:5px}.grid{display:grid;grid-template-columns:1.3fr .9fr;gap:15px}.panel h2{font-size:15px;margin:0 0 8px}.panel p{font-size:11px;color:var(--muted);line-height:1.8}.panel textarea{width:100%;min-height:140px;border:1px solid var(--line);border-radius:12px;padding:13px;line-height:1.8;resize:vertical;background:#fbfdfc}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 16px}.chips button,.secondary{border:1px solid var(--line);background:white;padding:8px 10px;border-radius:9px;font-size:11px;color:#3d5b50}.primary{border:0;background:var(--green);color:white;padding:12px 16px;border-radius:10px;font-size:12px;font-weight:bold}.primary:disabled{opacity:.65}.full{width:100%;margin-top:13px}.member{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #edf1ee}.member:last-child{border-bottom:0}.symbol{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;font-weight:bold;font-size:16px}.m1{background:#e5f4ed;color:#176b58}.m2{background:#f8ece3;color:#9a5b30}.m3{background:#ecefff;color:#4d5ac2}.m4{background:#eff1f0;color:#293b34}.member div:nth-child(2){flex:1}.member b{font-size:12px}.member small{display:block;color:var(--muted);font-size:10px;margin-top:5px}.status{font-size:10px;color:#a06a26}.status.ok{color:#176b58}.result{display:none;background:#f3faf6;border:1px solid #d4eade;border-radius:12px;padding:13px;margin-top:15px;font-size:12px;line-height:1.9;white-space:pre-wrap;overflow-wrap:anywhere}.result.show{display:block}.result.error{background:#fff7f2;border-color:#f0d4c4;color:#813d20}.warning{font-size:10px!important;color:#9b6d2c!important;margin-top:12px}.invite{display:flex;gap:8px;margin-top:12px}.invite input{width:100%;min-width:0;border:1px solid var(--line);border-radius:9px;padding:10px;font-size:11px}.footer{text-align:center;color:#91a099;font-size:10px;margin:24px 0 0}@media(max-width:760px){.layout{display:block}.side{padding:14px}.brand{margin-bottom:12px}.nav{grid-template-columns:repeat(3,1fr)}.nav button{font-size:11px;text-align:center;padding:10px 4px}.side-note{display:none}main{padding:15px}.hero{padding:22px}.star{display:none}.stats{gap:7px}.stat{padding:12px}.stat b{font-size:19px}.stat small{line-height:1.7}.grid{grid-template-columns:1fr}.top{margin-bottom:15px}}
+:root{--green:#176b58;--dark:#12372f;--bg:#f3f7f5;--line:#e0e9e4;--muted:#71817a;--white:#fff;--soft:#f3faf6;--danger:#813d20}*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:#1c3029}button,textarea,input,select{font:inherit}button{cursor:pointer}.layout{display:grid;grid-template-columns:245px minmax(0,1fr);min-height:100vh}.side{background:var(--dark);color:white;padding:22px 15px}.brand{display:flex;align-items:center;gap:10px;margin-bottom:25px}.logo{background:#8de0bd;color:#12372f;border-radius:13px;width:42px;height:42px;display:grid;place-items:center;font-size:24px;flex-shrink:0}.brand b{font-size:15px}.brand small{display:block;color:#b8d4ca;font-size:11px;margin-top:5px}.nav{display:grid;gap:6px}.nav button{border:0;background:transparent;color:#d4e4dd;text-align:right;padding:12px;border-radius:10px}.nav button.active,.nav button:hover{background:#285448;color:white}.side-note{margin-top:28px;padding:13px;background:#20483d;border-radius:13px;color:#d3e5dd;font-size:12px;line-height:1.9}main{padding:24px;max-width:1250px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px;font-size:12px;color:var(--muted)}.user{display:flex;align-items:center;gap:10px}.avatar{border-radius:50%;background:#d9eee5;color:var(--green);width:36px;height:36px;display:grid;place-items:center;font-weight:bold;flex-shrink:0}.hero{background:linear-gradient(120deg,#12372f,#19745e);color:white;border-radius:20px;padding:27px;display:flex;justify-content:space-between;gap:18px;align-items:center}.hero h1{font-size:clamp(23px,3vw,32px);margin:0 0 12px}.hero p{font-size:13px;line-height:1.9;color:#d5e9e1;margin:0;max-width:760px}.pill{display:inline-block;margin-top:15px;padding:8px 12px;border-radius:20px;background:#ffffff19;font-size:11px}.star{font-size:62px;color:#a4e8cc;padding:0 10px}.section-title{margin:25px 0 13px;font-size:17px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.stat,.panel,.team-card,.answer-card{background:white;border:1px solid var(--line);border-radius:16px;padding:16px}.stat b{font-size:23px;display:block}.stat small{font-size:11px;color:var(--muted);display:block;margin-top:5px;line-height:1.7}.panel h2,.answer-card h3{font-size:15px;margin:0 0 8px}.panel p,.hint{font-size:12px;color:var(--muted);line-height:1.9}.panel textarea{width:100%;min-height:130px;border:1px solid var(--line);border-radius:12px;padding:13px;line-height:1.9;resize:vertical;background:#fbfdfc}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 14px}.chips button,.secondary{border:1px solid var(--line);background:white;padding:9px 11px;border-radius:9px;font-size:11px;color:#3d5b50}.primary{border:0;background:var(--green);color:white;padding:12px 16px;border-radius:10px;font-size:12px;font-weight:bold}.primary:disabled{opacity:.65;cursor:wait}.full{width:100%;margin-top:12px}.team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.team-card{display:flex;gap:12px;align-items:flex-start}.symbol{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-weight:bold;font-size:18px;flex-shrink:0}.m1{background:#e5f4ed;color:#176b58}.m2{background:#f8ece3;color:#9a5b30}.m3{background:#ecefff;color:#4d5ac2}.m4{background:#eff1f0;color:#293b34}.team-card b{font-size:13px}.team-card small{display:block;color:var(--muted);font-size:11px;margin-top:6px;line-height:1.7}.status{display:inline-block;margin-top:8px;font-size:10px;padding:4px 7px;border-radius:20px;background:#f4f1e8;color:#8b6b29}.status.ok{background:#e5f4ed;color:#176b58}.result-area{display:none;margin-top:18px}.result-area.show{display:block}.result-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}.result-head h2{font-size:17px;margin:0}.stage{font-size:11px;color:var(--muted);margin:8px 0 14px}.results-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.answer-card{min-width:0}.answer-card p,.answer-card .answer-text{font-size:12px;line-height:1.95;white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0}.answer-card.winner{border-color:#8acbb0;background:#f7fcf9}.answer-card h3{display:flex;align-items:center;gap:8px}.rank{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:8px;background:#e5f4ed;color:#176b58;font-size:12px}.card-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.copy-btn{border:1px solid var(--line);background:#fff;padding:8px 10px;border-radius:9px;font-size:11px;color:#35594b}.winner-label{font-size:10px;background:#d9f4e5;color:#176b58;border-radius:20px;padding:5px 8px}.error{background:#fff7f2;border-color:#f0d4c4;color:var(--danger)}.notice{background:#fff9e9;border:1px solid #f0e1b5;color:#795d19;padding:12px;border-radius:12px;font-size:11px;line-height:1.9;margin-top:12px}.invite{display:flex;gap:8px;margin-top:12px}.invite input{width:100%;min-width:0;border:1px solid var(--line);border-radius:9px;padding:10px;font-size:11px}.footer{text-align:center;color:#91a099;font-size:10px;margin:24px 0 0}.hidden{display:none!important}.section-anchor{scroll-margin-top:14px}@media(max-width:800px){.layout{display:block}.side{padding:13px}.brand{margin-bottom:12px}.nav{grid-template-columns:repeat(3,1fr)}.nav button{font-size:11px;text-align:center;padding:10px 4px}.side-note{display:none}main{padding:14px}.hero{padding:21px}.star{display:none}.stats{gap:7px}.stat{padding:11px}.stat b{font-size:19px}.grid,.team-grid,.results-grid{grid-template-columns:1fr}.top{margin-bottom:14px}.section-title{margin-top:22px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="layout"><aside class="side"><div class="brand"><div class="logo">✦</div><div><b>فريق العمل الذكي</b><small>مساحة تعاون مشتركة</small></div></div><nav class="nav"><button class="active" data-target="home">الرئيسية</button><button data-target="taskbox">إرسال مهمة</button><button data-target="members">أعضاء الفريق</button><button data-target="invite">دعوة الأعضاء</button><button data-target="about">حول المشروع</button></nav><div class="side-note">مساحة واحدة لتجميع المهام، آراء النماذج، والمراجعة النهائية.<br>ربط Gemini قيد الاختبار.</div></aside>
-<main id="home"><div class="top"><span>مساحة العمل / الرئيسية</span><div class="user"><div class="avatar">م</div><span>مدير الفريق · نموذج أولي</span></div></div>
-<section class="hero"><div><h1>أهلًا بك في فريق العمل الذكي</h1><p>اكتب طلبك بالعربية وأرسله إلى Gemini عبر خادم Cloudflare. مفتاح API محفوظ في الخادم ولا يوضع في هذه الصفحة.</p><span class="pill" id="connectionPill">● Gemini: لم يتم اختبار الاتصال بعد</span></div><div class="star">✦</div></section>
-<h2 class="section-title">نظرة عامة</h2><section class="stats"><div class="stat"><b id="count">0</b><small>مهام أُرسلت في هذه الجلسة</small></div><div class="stat"><b>1</b><small>خدمة يجري اختبارها: Gemini</small></div><div class="stat"><b id="verifiedCount">0</b><small>اتصالات ناجحة</small></div></section>
-<h2 class="section-title" id="taskbox">أرسل مهمة إلى Gemini</h2><section class="grid"><div class="panel"><h2>ما الذي تريد إنجازه؟</h2><p>اكتب طلبك بالعربية ثم اضغط إرسال. ستظهر إجابة Gemini هنا إذا نجح الاتصال.</p><textarea id="task" placeholder="مثال: راجع فكرة مشروعي، اقترح خطة تنفيذ، ثم دقق المخاطر والحل النهائي..."></textarea><div class="chips"><button data-example="خطط لي مشروعًا خطوة بخطوة، مع المخاطر ومعايير النجاح. ">تخطيط مشروع</button><button data-example="حلّل هذه المشكلة من ثلاث وجهات نظر ثم اقترح حلًا. ">تحليل مشكلة</button><button data-example="راجع النص التالي وحسّنه مع توضيح أسباب التعديلات. ">مراجعة نص</button></div><button class="primary full" id="send">إرسال المهمة إلى Gemini ←</button><div class="result" id="result" aria-live="polite"></div><p class="warning">لا تضع كلمات مرور أو مفاتيح API سرية في خانة المهمة.</p></div>
-<div class="panel" id="members"><h2>أعضاء الفريق</h2><p>يجري ربط Gemini أولًا. بقية الخدمات لم تُربط بعد.</p><div class="member"><div class="symbol m1">✳</div><div><b>ChatGPT — المنسّق</b><small>تقسيم المهمة وتجميع النتيجة</small></div><span class="status">غير متصل</span></div><div class="member"><div class="symbol m2">✺</div><div><b>Claude — المراجع</b><small>التدقيق واكتشاف الثغرات</small></div><span class="status">غير متصل</span></div><div class="member"><div class="symbol m3">✧</div><div><b>Gemini — الباحث</b><small>اقتراح بدائل وتحليل إضافي</small></div><span class="status" id="geminiStatus">لم يُختبر</span></div><div class="member"><div class="symbol m4">N</div><div><b>Notion — سجل الفريق</b><small>حفظ المهام والقرارات لاحقًا</small></div><span class="status">غير مربوط</span></div><h2 class="section-title" id="invite">دعوة أعضاء بشرية</h2><p>هذه الواجهة لا ترسل دعوات فعلية؛ ذلك يتطلب نظام حسابات.</p><div class="invite"><input id="inviteEmail" placeholder="البريد الإلكتروني للعضو"><button class="secondary" id="inviteBtn">تحضير دعوة</button></div><div class="result" id="inviteResult"></div></div></section>
-<h2 class="section-title" id="about">حول المشروع</h2><section class="panel"><p>هذا الموقع يتصل بـ Gemini فقط عبر Cloudflare Worker. لم يتم ربط ChatGPT أو Claude أو Notion حتى الآن.</p></section><div class="footer">فريق العمل الذكي · اتصال Gemini قيد الاختبار</div></main></div>
+<div class="layout">
+<aside class="side">
+  <div class="brand"><div class="logo">✦</div><div><b>فريق العمل الذكي</b><small>مساحة تعاون مشتركة</small></div></div>
+  <nav class="nav" aria-label="القائمة الرئيسية">
+    <button class="active" data-target="home">الرئيسية</button>
+    <button data-target="taskbox">إرسال مهمة</button>
+    <button data-target="teams">الفرق الأربعة</button>
+    <button data-target="results">النتائج</button>
+    <button data-target="about">حول المشروع</button>
+  </nav>
+  <div class="side-note">دورة العمل: اقتراحات مستقلة، نقد متبادل، تحسين، ترتيب، ثم اختيار الحل الأنسب.<br>مفتاح API محفوظ في Cloudflare ولا يوضع في هذه الصفحة.</div>
+</aside>
+<main id="home">
+  <div class="top"><span>مساحة العمل / الرئيسية</span><div class="user"><div class="avatar">م</div><span>مدير الفريق · نموذج تطويري</span></div></div>
+  <section class="hero"><div><h1>أهلًا بك في فريق العمل الذكي</h1><p>أرسل المشكلة مرة واحدة. يوزّع المنسق المهمة على أربعة أدوار متخصصة، ويطلب من كل دور تقديم مقترح ثم نقد مقترحات الآخرين، وبعدها يقارن الحلول ويرتبها ويشرح سبب اختيار الأفضل.</p><span class="pill" id="connectionPill">● Gemini: لم يتم اختبار الاتصال بعد</span></div><div class="star">✦</div></section>
+
+  <h2 class="section-title">نظرة عامة</h2>
+  <section class="stats"><div class="stat"><b id="count">0</b><small>جولات نقاش في هذه الصفحة</small></div><div class="stat"><b>4</b><small>فرق متخصصة في سير العمل</small></div><div class="stat"><b id="verifiedCount">0</b><small>اتصالات ناجحة مع Gemini</small></div></section>
+
+  <h2 class="section-title section-anchor" id="taskbox">ابدأ جولة نقاش جديدة</h2>
+  <section class="panel">
+    <h2>ما المشكلة أو الفكرة التي تريد من الفرق دراستها؟</h2>
+    <p>اكتب وصفًا واضحًا، واذكر القيود أو الميزانية أو الهدف إن وجدت. سيطلب الموقع من Gemini محاكاة الأدوار الأربعة في دورة واحدة، مع توضيح أن هذا ليس اتصالًا مستقلًا بكل خدمة.</p>
+    <textarea id="task" placeholder="مثال: أريد تطوير تطبيق لتعليم القرآن مع بحث صوتي دقيق. اقترح حلولًا قابلة للتنفيذ، ووازن بين الدقة والتكلفة وسهولة الاستخدام."></textarea>
+    <div class="chips"><button data-example="حلّل هذه المشكلة، واقترح عدة حلول عملية، ثم اختبرها وحدد الأفضل. ">تحليل مشكلة</button><button data-example="ابتكر مشروعًا جديدًا، وقيّم قابلية تنفيذه وتكلفته ومخاطره. ">ابتكار مشروع</button><button data-example="راجع خطتي واكتشف الثغرات، ثم اقترح خطة محسنة خطوة بخطوة. ">مراجعة خطة</button></div>
+    <button class="primary full" id="send">ابدأ النقاش بين الفرق ←</button>
+    <div class="notice">في هذه المرحلة، Gemini هو نموذج الذكاء الاصطناعي المتصل فعليًا. أدوار الفرق الأربعة هي أدوار منظّمة داخل طلب واحد إلى Gemini، وليست أربعة اتصالات مستقلة. سنربط خدمات أخرى لاحقًا عند إعداد مفاتيحها السرية.</div>
+  </section>
+
+  <h2 class="section-title section-anchor" id="teams">الفرق الأربعة</h2>
+  <section class="team-grid">
+    <article class="team-card"><div class="symbol m1">✳</div><div><b>فريق الابتكار والاختراع</b><small>يولّد حلولًا متعددة، ويشرح الفكرة الجديدة والقيمة التي تقدمها وكيف يمكن تجربتها.</small><span class="status">دور محاكى عبر Gemini</span></div></article>
+    <article class="team-card"><div class="symbol m2">⌕</div><div><b>فريق التحليل والتدقيق</b><small>يفحص الافتراضات والأدلة، ويكشف التناقضات والثغرات، ويقارن البدائل.</small><span class="status">دور محاكى عبر Gemini</span></div></article>
+    <article class="team-card"><div class="symbol m3">⚙</div><div><b>فريق التنفيذ والتطوير</b><small>يحوّل الأفكار إلى خطوات عملية، ويقدّر المتطلبات والتكلفة والوقت والصعوبات.</small><span class="status">دور محاكى عبر Gemini</span></div></article>
+    <article class="team-card"><div class="symbol m4">✓</div><div><b>فريق الجودة والمخاطر</b><small>يختبر السلامة والموثوقية والمخاطر والآثار الجانبية، ويقترح وسائل التخفيف.</small><span class="status">دور محاكى عبر Gemini</span></div></article>
+  </section>
+
+  <section class="result-area section-anchor" id="results" aria-live="polite">
+    <div class="result-head"><h2>نتائج جولة النقاش</h2><button class="secondary" id="copyAll">نسخ التقرير كاملًا</button></div>
+    <div class="stage" id="stage">ستظهر المقترحات والنقد والترتيب هنا.</div>
+    <div id="resultsGrid" class="results-grid"></div>
+    <div class="card-actions"><button class="primary" id="copyReportBottom">نسخ التقرير كاملًا</button><button class="secondary" id="newTask">جولة جديدة</button></div>
+  </section>
+
+  <h2 class="section-title section-anchor" id="about">حول المشروع</h2>
+  <section class="panel"><h2>كيف يُختار الحل الأفضل؟</h2><p>يُطلب من Gemini تقييم الحلول وفق معايير موحدة: مدى ملاءمة الحل للمشكلة، والدقة، وسهولة التنفيذ، والتكلفة، والأمان، والمخاطر. يجب قراءة أسباب الترتيب والاعتراضات المهمة، وعدم اعتبار التقييم الآلي ضمانًا للصحة. في المهام الحساسة، راجع المعلومات مع مختص قبل التنفيذ.</p><p>لا توجد في هذه النسخة حسابات أعضاء بشرية أو ربط فعلي بـ ChatGPT أو Claude أو Notion؛ ستظهر هذه الإمكانات بعد تنفيذ الربط الخاص بها.</p></section>
+  <div class="footer">فريق العمل الذكي · نسخة تطويرية · Gemini عبر Cloudflare Worker</div>
+</main>
+</div>
 <script>
-const WORKER_URL = "https://ai-team-api.dilshad2101-8bb.workers.dev/";
-document.querySelectorAll('[data-target]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-target]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.target).scrollIntoView({behavior:'smooth',block:'start'})});
-document.querySelectorAll('[data-example]').forEach(b=>b.onclick=()=>{const t=document.getElementById('task');t.value+=b.dataset.example;t.focus()});
-let n=0;
-document.getElementById('send').onclick=async()=>{
- const prompt=document.getElementById('task').value.trim();const button=document.getElementById('send');const r=document.getElementById('result');const pill=document.getElementById('connectionPill');
- if(!prompt){alert('اكتب المهمة أولًا.');return;}
- button.disabled=true;button.textContent='جارٍ الاتصال بـ Gemini...';r.className='result show';r.textContent='جارٍ إرسال المهمة إلى الخادم...';pill.textContent='● Gemini: جارٍ الاتصال';
- try{
-  const response=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt})});
-  let data;try{data=await response.json();}catch(e){throw new Error('رد الخادم ليس بصيغة JSON. تأكد من نشر Worker.');}
-  if(!response.ok||!data.ok){let msg=data.error||'فشل الاتصال بالخادم.';if(data.status)msg+='\nرمز الخطأ من Gemini: '+data.status;throw new Error(msg);}
-  n++;document.getElementById('count').textContent=n;document.getElementById('verifiedCount').textContent='1';document.getElementById('geminiStatus').textContent='متصل';document.getElementById('geminiStatus').classList.add('ok');pill.textContent='● Gemini: الاتصال ناجح';r.className='result show';r.textContent='إجابة Gemini:\n\n'+data.text;
- }catch(error){let msg=error&&error.message?error.message:'حدث خطأ غير معروف.';if(msg==='Failed to fetch'||msg.includes('NetworkError'))msg='تعذر الوصول إلى الخادم. تأكد من نشر Cloudflare Worker وصحة إعدادات CORS، ثم أعد المحاولة.';r.className='result show error';r.textContent='لم تنجح عملية الاتصال.\n\n'+msg+'\n\nلا ترسل مفتاح API إلى أي شخص.';pill.textContent='● Gemini: فشل الاتصال';}
- finally{button.disabled=false;button.textContent='إرسال المهمة إلى Gemini ←';}
-};
-document.getElementById('inviteBtn').onclick=()=>{const e=document.getElementById('inviteEmail').value.trim(),r=document.getElementById('inviteResult');if(!e||!e.includes('@')){alert('أدخل بريدًا إلكترونيًا صحيحًا.');return;}r.textContent='تم تجهيز عنوان الدعوة: '+e+'\nلم تُرسل الدعوة؛ يجب إضافة نظام حسابات أولًا.';r.className='result show';};
+'use strict';
+const WORKER_URL = 'https://ai-team-api.dilshad2101-8bb.workers.dev/';
+const $ = (id) => document.getElementById(id);
+let rounds = 0;
+let latestReport = '';
+
+document.querySelectorAll('[data-target]').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('[data-target]').forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+    const target = $(button.dataset.target);
+    if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+document.querySelectorAll('[data-example]').forEach(button => {
+  button.addEventListener('click', () => { $('task').value += button.dataset.example; $('task').focus(); });
+});
+
+function makeDiscussionPrompt(task) {
+  return `أنت منسق مجلس فرق افتراضي. حلّل المهمة التالية بعمق، ونفّذ محاكاة منظمة لأربعة فرق متخصصة. مهم جدًا: لا تدّع أن هناك نماذج ذكاء اصطناعي مستقلة أو مصادر خارجية شاركت؛ أنت نموذج واحد يحاكي أدوار الفرق الأربعة فقط. لا تخترع حقائق أو أسعارًا أو مصادر. إذا كانت المعلومات ناقصة فاذكر الافتراضات والأسئلة المفتوحة.\n\nالمهمة:\n${task}\n\nاتبع المراحل التالية بالترتيب:\n1) فريق الابتكار والاختراع: اقترح حلين مختلفين على الأقل، ثم اختر أقوى فكرة أولية واشرح سببها.\n2) فريق التحليل والتدقيق: راجع أفكار الابتكار، واذكر نقاط القوة والضعف والافتراضات غير المثبتة، واقترح تحسينات.\n3) فريق التنفيذ والتطوير: حوّل أفضل الأفكار إلى خطة تنفيذ واقعية بخطوات ومتطلبات واعتماديات، ولا تخترع تكلفة رقمية إن لم تتوفر بيانات.\n4) فريق الجودة والمخاطر: اختبر الحلول من ناحية الأمان والموثوقية والتكلفة والمخاطر والآثار الجانبية، واقترح تخفيف المخاطر.\n5) جولة النقد المتبادل: اذكر لكل فريق تعليقًا نقديًا محددًا على المقترحات التي قدمتها الفرق الأخرى، ثم بيّن كيف تُعدّل المقترحات استجابةً للنقد. لا تجعل الجميع يتفقون تلقائيًا؛ احتفظ بأي خلاف جوهري مع تفسيره.\n6) الترتيب النهائي: رتّب أفضل ثلاثة حلول من الأول إلى الثالث وفق معايير واضحة، وامنح كل حل درجة من 100 مع تفسير مختصر. استخدم معايير ملاءمة المشكلة، والدقة/الأدلة، وقابلية التنفيذ، والتكلفة، والأمان/المخاطر، واذكر حدود التقييم.\n7) القرار: اختر حلًا فائزًا واحدًا. إذا كان دمج عناصر من أكثر من حل أفضل، اشرح الدمج بوضوح. اذكر سبب فوزه، وأهم اعتراض متبقٍ، وخطوات العمل التالية.\n\nاكتب بالعربية الواضحة مع عناوين منظمة. لا تكتفِ بوصف طريقة العمل؛ نفّذ التحليل الفعلي للمهمة المحددة. اجعل الإجابة قابلة للقراءة والنسخ، ولا تضع الإجابة داخل JSON.`;
+}
+
+function addCopyButton(container, text, label='نسخ النص') {
+  const wrap = document.createElement('div');
+  wrap.className = 'card-actions';
+  const btn = document.createElement('button');
+  btn.className = 'copy-btn';
+  btn.type = 'button';
+  btn.textContent = label;
+  btn.addEventListener('click', async () => {
+    try {
+      await copyText(text);
+      btn.textContent = 'تم النسخ ✓';
+      setTimeout(() => { btn.textContent = label; }, 1600);
+    } catch {
+      btn.textContent = 'تعذر النسخ';
+    }
+  });
+  wrap.appendChild(btn);
+  container.appendChild(wrap);
+}
+
+async function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const area = document.createElement('textarea');
+  area.value = text;
+  area.style.position = 'fixed'; area.style.opacity = '0'; area.style.insetInlineStart = '-9999px';
+  document.body.appendChild(area); area.focus(); area.select();
+  const ok = document.execCommand('copy');
+  area.remove();
+  if (!ok) throw new Error('copy failed');
+}
+
+function makeCard(title, text, options={}) {
+  const card = document.createElement('article');
+  card.className = 'answer-card' + (options.winner ? ' winner' : '');
+  const heading = document.createElement('h3');
+  if (options.rank) {
+    const rank = document.createElement('span'); rank.className = 'rank'; rank.textContent = options.rank; heading.appendChild(rank);
+  }
+  const titleText = document.createElement('span'); titleText.textContent = title; heading.appendChild(titleText);
+  if (options.winner) {
+    const badge = document.createElement('span'); badge.className = 'winner-label'; badge.textContent = 'الحل المختار'; heading.appendChild(badge);
+  }
+  card.appendChild(heading);
+  const body = document.createElement('div'); body.className = 'answer-text'; body.textContent = text; card.appendChild(body);
+  addCopyButton(card, title + '\n\n' + text, 'نسخ هذا القسم');
+  return card;
+}
+
+function renderReport(text) {
+  const grid = $('resultsGrid'); grid.replaceChildren();
+  // Keep the model's complete, unaltered answer visible and copyable, while showing a clear decision panel.
+  const winnerMatch = text.match(/(?:القرار النهائي|الحل الفائز|الحل المختار|الفائز)[\s:：\-]*([\s\S]{0,1800}?)(?=\n#{1,3}\s|\n(?:الترتيب النهائي|أهم اعتراض|خطوات العمل التالية|الخلاصة)\s*[:：]?|$)/i);
+  const rankingMatch = text.match(/(?:الترتيب النهائي|ترتيب الحلول|أفضل ثلاثة حلول)[\s:：\-]*([\s\S]{0,2200}?)(?=\n#{1,3}\s|\n(?:القرار النهائي|الحل الفائز|الحل المختار|الخلاصة)\s*[:：]?|$)/i);
+  if (rankingMatch && rankingMatch[1].trim()) grid.appendChild(makeCard('ترتيب المقترحات', rankingMatch[1].trim(), {rank:'1'}));
+  if (winnerMatch && winnerMatch[1].trim()) grid.appendChild(makeCard('القرار والحل الفائز', winnerMatch[1].trim(), {winner:true}));
+  grid.appendChild(makeCard('التقرير الكامل: المقترحات والنقد والتحسينات', text));
+  latestReport = text;
+  $('stage').textContent = 'اكتملت الجولة. اقرأ النقد والاعتراضات قبل اعتماد الحل، ويمكنك نسخ أي قسم أو التقرير كاملًا.';
+  $('results').classList.add('show');
+}
+
+$('send').addEventListener('click', async () => {
+  const task = $('task').value.trim();
+  const button = $('send');
+  const pill = $('connectionPill');
+  if (!task) { alert('اكتب المهمة أولًا.'); $('task').focus(); return; }
+  button.disabled = true;
+  button.textContent = 'الفرق تناقش المقترحات الآن...';
+  pill.textContent = '● Gemini: جارٍ تنفيذ جولة النقاش';
+  $('results').classList.add('show');
+  $('resultsGrid').replaceChildren();
+  $('stage').textContent = 'جارٍ توليد المقترحات والنقد المتبادل والترتيب النهائي. قد يستغرق ذلك بعض الوقت.';
+  try {
+    const response = await fetch(WORKER_URL, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({prompt:makeDiscussionPrompt(task)})
+    });
+    let data;
+    try { data = await response.json(); } catch { throw new Error('رد الخادم ليس بصيغة JSON. تأكد من نشر Cloudflare Worker.'); }
+    if (!response.ok || !data.ok) {
+      let message = data.error || 'فشل الاتصال بالخادم.';
+      if (data.status) message += '\nرمز الخطأ من Gemini: ' + data.status;
+      if (data.details) message += '\nالتفاصيل: ' + data.details;
+      throw new Error(message);
+    }
+    if (!data.text || !String(data.text).trim()) throw new Error('لم تصل إجابة نصية من Gemini.');
+    rounds++;
+    $('count').textContent = String(rounds);
+    $('verifiedCount').textContent = '1';
+    pill.textContent = '● Gemini: الاتصال ناجح';
+    renderReport(String(data.text).trim());
+    $('results').scrollIntoView({behavior:'smooth',block:'start'});
+  } catch (error) {
+    const message = error && error.message ? error.message : 'حدث خطأ غير معروف.';
+    const grid = $('resultsGrid'); grid.replaceChildren();
+    grid.appendChild(makeCard('تعذر إكمال جولة النقاش', message + '\n\nلا ترسل مفتاح API إلى أي شخص.', {rank:'!'}));
+    $('stage').textContent = 'لم تكتمل الجولة. راجع رسالة الخطأ وأعد المحاولة.';
+    pill.textContent = '● Gemini: فشل الاتصال';
+  } finally {
+    button.disabled = false;
+    button.textContent = 'ابدأ النقاش بين الفرق ←';
+  }
+});
+
+async function copyFullReport(button) {
+  if (!latestReport) { alert('لا يوجد تقرير لنسخه بعد.'); return; }
+  try {
+    await copyText(latestReport);
+    const old = button.textContent; button.textContent = 'تم نسخ التقرير ✓';
+    setTimeout(() => { button.textContent = old; }, 1600);
+  } catch { alert('تعذر النسخ تلقائيًا. اضغط مطولًا على النص وحدده لنسخه.'); }
+}
+$('copyAll').addEventListener('click', function(){ copyFullReport(this); });
+$('copyReportBottom').addEventListener('click', function(){ copyFullReport(this); });
+$('newTask').addEventListener('click', () => { $('task').focus(); $('task').scrollIntoView({behavior:'smooth',block:'center'}); });
 </script>
 </body>
 </html>
