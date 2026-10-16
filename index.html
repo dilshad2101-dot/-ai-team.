@@ -6,201 +6,143 @@
 <meta name="theme-color" content="#12372f">
 <title>فريق العمل الذكي</title>
 <style>
-:root{--green:#176b58;--dark:#12372f;--bg:#f3f7f5;--line:#e0e9e4;--muted:#71817a;--white:#fff;--soft:#f3faf6;--danger:#813d20}*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:#1c3029}button,textarea,input,select{font:inherit}button{cursor:pointer}.layout{display:grid;grid-template-columns:245px minmax(0,1fr);min-height:100vh}.side{background:var(--dark);color:white;padding:22px 15px}.brand{display:flex;align-items:center;gap:10px;margin-bottom:25px}.logo{background:#8de0bd;color:#12372f;border-radius:13px;width:42px;height:42px;display:grid;place-items:center;font-size:24px;flex-shrink:0}.brand b{font-size:15px}.brand small{display:block;color:#b8d4ca;font-size:11px;margin-top:5px}.nav{display:grid;gap:6px}.nav button{border:0;background:transparent;color:#d4e4dd;text-align:right;padding:12px;border-radius:10px}.nav button.active,.nav button:hover{background:#285448;color:white}.side-note{margin-top:28px;padding:13px;background:#20483d;border-radius:13px;color:#d3e5dd;font-size:12px;line-height:1.9}main{padding:24px;max-width:1250px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px;font-size:12px;color:var(--muted)}.user{display:flex;align-items:center;gap:10px}.avatar{border-radius:50%;background:#d9eee5;color:var(--green);width:36px;height:36px;display:grid;place-items:center;font-weight:bold;flex-shrink:0}.hero{background:linear-gradient(120deg,#12372f,#19745e);color:white;border-radius:20px;padding:27px;display:flex;justify-content:space-between;gap:18px;align-items:center}.hero h1{font-size:clamp(23px,3vw,32px);margin:0 0 12px}.hero p{font-size:13px;line-height:1.9;color:#d5e9e1;margin:0;max-width:760px}.pill{display:inline-block;margin-top:15px;padding:8px 12px;border-radius:20px;background:#ffffff19;font-size:11px}.star{font-size:62px;color:#a4e8cc;padding:0 10px}.section-title{margin:25px 0 13px;font-size:17px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.stat,.panel,.team-card,.answer-card{background:white;border:1px solid var(--line);border-radius:16px;padding:16px}.stat b{font-size:23px;display:block}.stat small{font-size:11px;color:var(--muted);display:block;margin-top:5px;line-height:1.7}.panel h2,.answer-card h3{font-size:15px;margin:0 0 8px}.panel p,.hint{font-size:12px;color:var(--muted);line-height:1.9}.panel textarea{width:100%;min-height:130px;border:1px solid var(--line);border-radius:12px;padding:13px;line-height:1.9;resize:vertical;background:#fbfdfc}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 14px}.chips button,.secondary{border:1px solid var(--line);background:white;padding:9px 11px;border-radius:9px;font-size:11px;color:#3d5b50}.primary{border:0;background:var(--green);color:white;padding:12px 16px;border-radius:10px;font-size:12px;font-weight:bold}.primary:disabled{opacity:.65;cursor:wait}.full{width:100%;margin-top:12px}.team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.team-card{display:flex;gap:12px;align-items:flex-start}.symbol{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-weight:bold;font-size:18px;flex-shrink:0}.m1{background:#e5f4ed;color:#176b58}.m2{background:#f8ece3;color:#9a5b30}.m3{background:#ecefff;color:#4d5ac2}.m4{background:#eff1f0;color:#293b34}.team-card b{font-size:13px}.team-card small{display:block;color:var(--muted);font-size:11px;margin-top:6px;line-height:1.7}.status{display:inline-block;margin-top:8px;font-size:10px;padding:4px 7px;border-radius:20px;background:#f4f1e8;color:#8b6b29}.status.ok{background:#e5f4ed;color:#176b58}.result-area{display:none;margin-top:18px}.result-area.show{display:block}.result-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}.result-head h2{font-size:17px;margin:0}.stage{font-size:11px;color:var(--muted);margin:8px 0 14px}.results-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.answer-card{min-width:0}.answer-card p,.answer-card .answer-text{font-size:12px;line-height:1.95;white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0}.answer-card.winner{border-color:#8acbb0;background:#f7fcf9}.answer-card h3{display:flex;align-items:center;gap:8px}.rank{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:8px;background:#e5f4ed;color:#176b58;font-size:12px}.card-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.copy-btn{border:1px solid var(--line);background:#fff;padding:8px 10px;border-radius:9px;font-size:11px;color:#35594b}.winner-label{font-size:10px;background:#d9f4e5;color:#176b58;border-radius:20px;padding:5px 8px}.error{background:#fff7f2;border-color:#f0d4c4;color:var(--danger)}.notice{background:#fff9e9;border:1px solid #f0e1b5;color:#795d19;padding:12px;border-radius:12px;font-size:11px;line-height:1.9;margin-top:12px}.invite{display:flex;gap:8px;margin-top:12px}.invite input{width:100%;min-width:0;border:1px solid var(--line);border-radius:9px;padding:10px;font-size:11px}.footer{text-align:center;color:#91a099;font-size:10px;margin:24px 0 0}.hidden{display:none!important}.section-anchor{scroll-margin-top:14px}@media(max-width:800px){.layout{display:block}.side{padding:13px}.brand{margin-bottom:12px}.nav{grid-template-columns:repeat(3,1fr)}.nav button{font-size:11px;text-align:center;padding:10px 4px}.side-note{display:none}main{padding:14px}.hero{padding:21px}.star{display:none}.stats{gap:7px}.stat{padding:11px}.stat b{font-size:19px}.grid,.team-grid,.results-grid{grid-template-columns:1fr}.top{margin-bottom:14px}.section-title{margin-top:22px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+:root{--green:#176b58;--dark:#12372f;--bg:#f3f7f5;--line:#e0e9e4;--muted:#71817a;--ink:#1c3029;--white:#fff;--amber:#946323;--red:#a14232}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,textarea,input{font:inherit}button{cursor:pointer}.layout{display:grid;grid-template-columns:235px minmax(0,1fr);min-height:100vh}.side{background:var(--dark);color:#fff;padding:25px 16px}.brand{display:flex;align-items:center;gap:10px;margin-bottom:30px}.logo{background:#8de0bd;color:var(--dark);border-radius:13px;width:42px;height:42px;display:grid;place-items:center;font-size:24px;flex:none}.brand b{font-size:15px}.brand small{display:block;color:#b8d4ca;font-size:11px;margin-top:5px}.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;color:#d4e4dd;text-align:right;padding:13px;border-radius:10px}.nav button.active,.nav button:hover{background:#285448;color:#fff}.side-note{margin-top:40px;padding:14px;background:#20483d;border-radius:13px;color:#d3e5dd;font-size:12px;line-height:1.9}main{padding:25px;max-width:1250px;width:100%;margin:auto;min-width:0}.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:22px;font-size:12px;color:var(--muted)}.user{display:flex;align-items:center;gap:10px}.avatar{border-radius:50%;background:#d9eee5;color:var(--green);width:36px;height:36px;display:grid;place-items:center;font-weight:bold;flex:none}.hero{background:linear-gradient(120deg,#12372f,#19745e);color:white;border-radius:20px;padding:27px;display:flex;justify-content:space-between;gap:18px;align-items:center}.hero h1{font-size:clamp(23px,3vw,32px);margin:0 0 12px}.hero p{font-size:13px;line-height:1.9;color:#d5e9e1;margin:0;max-width:740px}.pill{display:inline-block;margin-top:15px;padding:8px 12px;border-radius:20px;background:#ffffff19;font-size:11px}.star{font-size:62px;color:#a4e8cc;padding:0 12px}.section-title{margin:25px 0 13px;font-size:16px}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.stat,.panel,.team-card{background:white;border:1px solid var(--line);border-radius:16px;padding:17px;min-width:0}.stat b{font-size:23px;display:block}.stat small{font-size:11px;color:var(--muted);display:block;margin-top:5px;line-height:1.7}.grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.9fr);gap:15px;align-items:start}.panel h2,.team-card h3{font-size:15px;margin:0 0 8px}.panel p{font-size:11px;color:var(--muted);line-height:1.9}.panel textarea{width:100%;min-height:145px;border:1px solid var(--line);border-radius:12px;padding:13px;line-height:1.9;resize:vertical;background:#fbfdfc;color:var(--ink)}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 16px}.chips button,.secondary{border:1px solid var(--line);background:white;padding:9px 11px;border-radius:9px;font-size:11px;color:#3d5b50}.primary{border:0;background:var(--green);color:white;padding:12px 16px;border-radius:10px;font-size:12px;font-weight:bold}.primary:disabled{opacity:.6;cursor:wait}.full{width:100%;margin-top:10px}.secondary:disabled{opacity:.5;cursor:not-allowed}.member{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #edf1ee}.member:last-child{border-bottom:0}.symbol{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;font-weight:bold;font-size:16px;flex:none}.m1{background:#e5f4ed;color:#176b58}.m2{background:#f8ece3;color:#9a5b30}.m3{background:#ecefff;color:#4d5ac2}.m4{background:#eff1f0;color:#293b34}.member .desc{flex:1;min-width:0}.member b{font-size:12px}.member small{display:block;color:var(--muted);font-size:10px;margin-top:5px;line-height:1.6}.status{font-size:10px;color:#a06a26;white-space:nowrap}.status.ok{color:#176b58}.status.fail{color:#a14232}.warning{font-size:10px!important;color:#8c672d!important;margin-top:12px}.subtle{color:var(--muted);font-size:11px;line-height:1.8}.workflow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.step{background:white;border:1px solid var(--line);border-radius:12px;padding:12px;min-width:0}.step .number{display:inline-grid;place-items:center;width:27px;height:27px;border-radius:9px;background:#e5f4ed;color:var(--green);font-weight:bold;font-size:12px;margin-bottom:8px}.step b{font-size:12px;display:block}.step small{display:block;color:var(--muted);font-size:10px;line-height:1.8;margin-top:5px}.step.active{border-color:#71b69a;box-shadow:0 0 0 2px #d9f0e4}.step.done{background:#f3faf6}.step.error{border-color:#e5b9ab;background:#fff8f5}.results{display:grid;gap:13px}.team-card{padding:0;overflow:hidden}.team-head{padding:15px 17px;background:#fbfdfc;border-bottom:1px solid #edf1ee;display:flex;align-items:center;gap:10px}.team-head .symbol{width:35px;height:35px}.team-head .headtext{flex:1;min-width:0}.team-head small{font-size:10px;color:var(--muted);display:block;margin-top:4px}.team-head .status{font-size:10px}.team-body{padding:16px}.team-output{font-size:13px;line-height:2;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}.empty{color:#8c9992;font-size:12px;line-height:1.9;background:#fbfdfc;border:1px dashed #dce7e1;padding:14px;border-radius:10px}.card-actions{display:flex;justify-content:flex-start;gap:8px;flex-wrap:wrap;margin-top:13px}.copy-btn{border:1px solid #d8e6df;background:#f7fbf8;color:#285448;border-radius:8px;padding:8px 11px;font-size:11px}.copy-btn:active{transform:scale(.98)}.error-box{background:#fff7f3;border:1px solid #efcfc4;color:#883f2c;padding:13px;border-radius:10px;font-size:12px;line-height:1.9;white-space:pre-wrap}.progress-line{height:7px;background:#e4eee8;border-radius:20px;overflow:hidden;margin-top:10px}.progress-fill{height:100%;background:#4a9b78;width:0%;transition:width .25s}.overall-actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.hide{display:none!important}.invite{display:flex;gap:8px;margin-top:12px}.invite input{width:100%;min-width:0;border:1px solid var(--line);border-radius:9px;padding:10px;font-size:11px}.footer{text-align:center;color:#91a099;font-size:10px;margin:24px 0 0;line-height:1.8}.notice{padding:12px 14px;border-radius:10px;background:#fff8e9;border:1px solid #f0dfb6;color:#75521c;font-size:11px;line-height:1.9;margin-top:12px}.connection{color:#b8e4d0}.small-title{font-size:12px;font-weight:bold;margin:0 0 8px}.divider{border:0;border-top:1px solid #edf1ee;margin:15px 0}
+@media(max-width:850px){.layout{grid-template-columns:190px minmax(0,1fr)}main{padding:17px}.grid{grid-template-columns:1fr}.workflow{grid-template-columns:repeat(2,minmax(0,1fr))}.side{padding:18px 12px}}
+@media(max-width:600px){.layout{display:block}.side{padding:13px}.brand{margin-bottom:12px}.nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.nav button{font-size:10px;text-align:center;padding:10px 4px}.side-note{display:none}main{padding:13px}.hero{padding:21px}.star{display:none}.stats{gap:7px}.stat{padding:11px}.stat b{font-size:19px}.stat small{font-size:10px}.workflow{grid-template-columns:1fr 1fr}.top{margin-bottom:14px}.user span{font-size:10px}.team-head{padding:12px}.team-body{padding:13px}.team-output{font-size:12px}.status{max-width:70px;white-space:normal;text-align:left}}
 </style>
 </head>
 <body>
 <div class="layout">
 <aside class="side">
   <div class="brand"><div class="logo">✦</div><div><b>فريق العمل الذكي</b><small>مساحة تعاون مشتركة</small></div></div>
-  <nav class="nav" aria-label="القائمة الرئيسية">
-    <button class="active" data-target="home">الرئيسية</button>
-    <button data-target="taskbox">إرسال مهمة</button>
-    <button data-target="teams">الفرق الأربعة</button>
-    <button data-target="results">النتائج</button>
-    <button data-target="about">حول المشروع</button>
-  </nav>
-  <div class="side-note">دورة العمل: اقتراحات مستقلة، نقد متبادل، تحسين، ترتيب، ثم اختيار الحل الأنسب.<br>مفتاح API محفوظ في Cloudflare ولا يوضع في هذه الصفحة.</div>
+  <nav class="nav"><button class="active" data-target="home">الرئيسية</button><button data-target="taskbox">إرسال مهمة</button><button data-target="members">الفرق</button><button data-target="workflowSection">مراحل العمل</button><button data-target="resultsSection">النتائج</button><button data-target="about">حول المشروع</button></nav>
+  <div class="side-note">تُعالج كل مهمة عبر مراحل متتابعة: ابتكار، تدقيق، تنفيذ، مخاطر، نقد متبادل، ثم قرار نهائي.<br><br>ملاحظة: المراحل أدوار متخصصة ينفذها Gemini نفسه، وليست نماذج مستقلة.</div>
 </aside>
 <main id="home">
-  <div class="top"><span>مساحة العمل / الرئيسية</span><div class="user"><div class="avatar">م</div><span>مدير الفريق · نموذج تطويري</span></div></div>
-  <section class="hero"><div><h1>أهلًا بك في فريق العمل الذكي</h1><p>أرسل المشكلة مرة واحدة. يوزّع المنسق المهمة على أربعة أدوار متخصصة، ويطلب من كل دور تقديم مقترح ثم نقد مقترحات الآخرين، وبعدها يقارن الحلول ويرتبها ويشرح سبب اختيار الأفضل.</p><span class="pill" id="connectionPill">● Gemini: لم يتم اختبار الاتصال بعد</span></div><div class="star">✦</div></section>
-
+  <div class="top"><span>مساحة العمل / الرئيسية</span><div class="user"><div class="avatar">✦</div><span>منصة فرق العمل الذكية</span></div></div>
+  <section class="hero"><div><h1>فريق العمل الذكي</h1><p>اكتب مشكلة أو هدفًا. سيمر الطلب عبر جولات ذكاء اصطناعي متتابعة، بحيث يستفيد كل فريق من نتائج المراحل السابقة، ثم تُرتّب الحلول ويُعرض القرار النهائي.</p><span class="pill" id="connectionPill">● الاتصال: لم يُختبر بعد</span></div><div class="star">✦</div></section>
   <h2 class="section-title">نظرة عامة</h2>
-  <section class="stats"><div class="stat"><b id="count">0</b><small>جولات نقاش في هذه الصفحة</small></div><div class="stat"><b>4</b><small>فرق متخصصة في سير العمل</small></div><div class="stat"><b id="verifiedCount">0</b><small>اتصالات ناجحة مع Gemini</small></div></section>
-
-  <h2 class="section-title section-anchor" id="taskbox">ابدأ جولة نقاش جديدة</h2>
-  <section class="panel">
-    <h2>ما المشكلة أو الفكرة التي تريد من الفرق دراستها؟</h2>
-    <p>اكتب وصفًا واضحًا، واذكر القيود أو الميزانية أو الهدف إن وجدت. سيطلب الموقع من Gemini محاكاة الأدوار الأربعة في دورة واحدة، مع توضيح أن هذا ليس اتصالًا مستقلًا بكل خدمة.</p>
-    <textarea id="task" placeholder="مثال: أريد تطوير تطبيق لتعليم القرآن مع بحث صوتي دقيق. اقترح حلولًا قابلة للتنفيذ، ووازن بين الدقة والتكلفة وسهولة الاستخدام."></textarea>
-    <div class="chips"><button data-example="حلّل هذه المشكلة، واقترح عدة حلول عملية، ثم اختبرها وحدد الأفضل. ">تحليل مشكلة</button><button data-example="ابتكر مشروعًا جديدًا، وقيّم قابلية تنفيذه وتكلفته ومخاطره. ">ابتكار مشروع</button><button data-example="راجع خطتي واكتشف الثغرات، ثم اقترح خطة محسنة خطوة بخطوة. ">مراجعة خطة</button></div>
-    <button class="primary full" id="send">ابدأ النقاش بين الفرق ←</button>
-    <div class="notice">في هذه المرحلة، Gemini هو نموذج الذكاء الاصطناعي المتصل فعليًا. أدوار الفرق الأربعة هي أدوار منظّمة داخل طلب واحد إلى Gemini، وليست أربعة اتصالات مستقلة. سنربط خدمات أخرى لاحقًا عند إعداد مفاتيحها السرية.</div>
+  <section class="stats"><div class="stat"><b id="count">0</b><small>مهام بدأ تنفيذها في هذه الصفحة</small></div><div class="stat"><b>6</b><small>مراحل متتابعة لكل مهمة</small></div><div class="stat"><b id="completedCount">0</b><small>مهام اكتملت جميع مراحلها</small></div></section>
+  <h2 class="section-title" id="taskbox">أرسل مهمة جديدة</h2>
+  <section class="grid">
+    <div class="panel">
+      <h2>ما المشكلة أو الهدف الذي تريد معالجته؟</h2>
+      <p>كل مرحلة ترسل طلبًا مستقلًا إلى الخادم وتستخدم نتائج المراحل السابقة. لا تغلق الصفحة أثناء العمل.</p>
+      <textarea id="task" maxlength="12000" placeholder="اكتب المهمة بوضوح، مثل: أريد تطوير فكرة تساعد على تقليل هدر الطعام في المنزل..." aria-label="نص المهمة"></textarea>
+      <div class="chips"><button data-example="اقترح اختراعًا عمليًا يحل مشكلة يومية، ثم اختبره من ناحية التنفيذ والتكلفة والمخاطر.">ابتكار اختراع</button><button data-example="حلّل مشكلة ازدحام الوقت والمهام اليومية، واقترح أفضل حل قابل للتطبيق.">تحليل مشكلة</button><button data-example="ضع خطة لتطوير تطبيق هاتف جديد، مع مراحل التنفيذ والاختبارات والمخاطر.">تخطيط تطبيق</button></div>
+      <button class="primary full" id="send">ابدأ نقاش الفرق ←</button>
+      <button class="secondary full" id="clearBtn">مسح النتائج والمهمة</button>
+      <div class="notice">قد يستغرق تنفيذ المراحل الست بعض الوقت؛ ستظهر حالة كل مرحلة هنا. لا يُعرض نجاح أي مرحلة إلا بعد استلام رد فعلي من الخادم.</div>
+      <p class="warning">لا تضع كلمات مرور أو مفاتيح API أو معلومات شديدة الخصوصية داخل المهمة.</p>
+    </div>
+    <div class="panel" id="members">
+      <h2>الفرق المشاركة</h2><p>كل فريق له دور محدد، وتُمرر نتائج الفرق السابقة للمراحل التالية عند الحاجة.</p>
+      <div class="member"><div class="symbol m1">✳</div><div class="desc"><b>1. فريق الابتكار والاختراع</b><small>يولّد بدائل وحلولًا متعددة</small></div><span class="status" id="memberStatus0">ينتظر</span></div>
+      <div class="member"><div class="symbol m2">⌕</div><div class="desc"><b>2. فريق التحليل والتدقيق</b><small>يكشف نقاط الضعف والافتراضات</small></div><span class="status" id="memberStatus1">ينتظر</span></div>
+      <div class="member"><div class="symbol m3">⚙</div><div class="desc"><b>3. فريق التنفيذ والتطوير</b><small>يحوّل الأفكار إلى خطة قابلة للاختبار</small></div><span class="status" id="memberStatus2">ينتظر</span></div>
+      <div class="member"><div class="symbol m4">✓</div><div class="desc"><b>4. فريق الجودة والمخاطر</b><small>يفحص السلامة والموثوقية</small></div><span class="status" id="memberStatus3">ينتظر</span></div>
+      <hr class="divider"><p class="subtle">بعد عمل الفرق الأربعة، تُنفذ جولتا النقد المتبادل والقرار النهائي.</p>
+    </div>
   </section>
-
-  <h2 class="section-title section-anchor" id="teams">الفرق الأربعة</h2>
-  <section class="team-grid">
-    <article class="team-card"><div class="symbol m1">✳</div><div><b>فريق الابتكار والاختراع</b><small>يولّد حلولًا متعددة، ويشرح الفكرة الجديدة والقيمة التي تقدمها وكيف يمكن تجربتها.</small><span class="status">دور محاكى عبر Gemini</span></div></article>
-    <article class="team-card"><div class="symbol m2">⌕</div><div><b>فريق التحليل والتدقيق</b><small>يفحص الافتراضات والأدلة، ويكشف التناقضات والثغرات، ويقارن البدائل.</small><span class="status">دور محاكى عبر Gemini</span></div></article>
-    <article class="team-card"><div class="symbol m3">⚙</div><div><b>فريق التنفيذ والتطوير</b><small>يحوّل الأفكار إلى خطوات عملية، ويقدّر المتطلبات والتكلفة والوقت والصعوبات.</small><span class="status">دور محاكى عبر Gemini</span></div></article>
-    <article class="team-card"><div class="symbol m4">✓</div><div><b>فريق الجودة والمخاطر</b><small>يختبر السلامة والموثوقية والمخاطر والآثار الجانبية، ويقترح وسائل التخفيف.</small><span class="status">دور محاكى عبر Gemini</span></div></article>
+  <h2 class="section-title" id="workflowSection">سير العمل المباشر</h2>
+  <section class="workflow" id="workflow">
+    <div class="step" data-step="0"><span class="number">1</span><b>الابتكار والاختراع</b><small>إعداد عدة مقترحات أولية</small><div class="status">ينتظر</div></div>
+    <div class="step" data-step="1"><span class="number">2</span><b>التحليل والتدقيق</b><small>مراجعة الأدلة والعيوب</small><div class="status">ينتظر</div></div>
+    <div class="step" data-step="2"><span class="number">3</span><b>التنفيذ والتطوير</b><small>خطة أولية ومقاييس نجاح</small><div class="status">ينتظر</div></div>
+    <div class="step" data-step="3"><span class="number">4</span><b>الجودة والمخاطر</b><small>المخاطر وطرق تخفيفها</small><div class="status">ينتظر</div></div>
+    <div class="step" data-step="4"><span class="number">5</span><b>النقد المتبادل</b><small>نقد المقترحات وتحسينها</small><div class="status">ينتظر</div></div>
+    <div class="step" data-step="5"><span class="number">6</span><b>الترتيب والقرار النهائي</b><small>مقارنة البدائل وترشيح الأفضل</small><div class="status">ينتظر</div></div>
   </section>
-
-  <section class="result-area section-anchor" id="results" aria-live="polite">
-    <div class="result-head"><h2>نتائج جولة النقاش</h2><button class="secondary" id="copyAll">نسخ التقرير كاملًا</button></div>
-    <div class="stage" id="stage">ستظهر المقترحات والنقد والترتيب هنا.</div>
-    <div id="resultsGrid" class="results-grid"></div>
-    <div class="card-actions"><button class="primary" id="copyReportBottom">نسخ التقرير كاملًا</button><button class="secondary" id="newTask">جولة جديدة</button></div>
+  <div id="progressPanel" class="panel hide" style="margin-top:13px"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><b id="progressText" style="font-size:12px">جاهز</b><small id="progressPercent" class="subtle">0%</small></div><div class="progress-line"><div id="progressFill" class="progress-fill"></div></div><p id="progressDetail" class="subtle">سيظهر التقدم هنا.</p></div>
+  <h2 class="section-title" id="resultsSection">نتائج الفرق والنقاش النهائي</h2>
+  <div class="overall-actions"><button class="primary" id="copyAll" disabled>نسخ جميع النتائج</button><button class="secondary" id="copyFinal" disabled>نسخ القرار النهائي فقط</button></div>
+  <section class="results" id="results">
+    <article class="team-card" data-result="0"><div class="team-head"><div class="symbol m1">✳</div><div class="headtext"><h3>فريق الابتكار والاختراع</h3><small>المرحلة الأولى · مقترحات أولية</small></div><span class="status">ينتظر</span></div><div class="team-body"><div class="empty">ستظهر هنا أفكار الفريق بعد انتهاء المرحلة الأولى.</div></div></article>
+    <article class="team-card" data-result="1"><div class="team-head"><div class="symbol m2">⌕</div><div class="headtext"><h3>فريق التحليل والتدقيق</h3><small>المرحلة الثانية · نقد وتدقيق</small></div><span class="status">ينتظر</span></div><div class="team-body"><div class="empty">ستظهر هنا مراجعة الفريق بعد تلقي أفكار الابتكار.</div></div></article>
+    <article class="team-card" data-result="2"><div class="team-head"><div class="symbol m3">⚙</div><div class="headtext"><h3>فريق التنفيذ والتطوير</h3><small>المرحلة الثالثة · خطة التنفيذ</small></div><span class="status">ينتظر</span></div><div class="team-body"><div class="empty">ستظهر هنا خطة التنفيذ مع الاستفادة من نتائج المرحلتين السابقتين.</div></div></article>
+    <article class="team-card" data-result="3"><div class="team-head"><div class="symbol m4">✓</div><div class="headtext"><h3>فريق الجودة والمخاطر</h3><small>المرحلة الرابعة · الفحص والسلامة</small></div><span class="status">ينتظر</span></div><div class="team-body"><div class="empty">ستظهر هنا مراجعة الجودة والمخاطر.</div></div></article>
+    <article class="team-card" data-result="4"><div class="team-head"><div class="symbol" style="background:#f2eafa;color:#75509b">↔</div><div class="headtext"><h3>جولة النقد المتبادل والتحسين</h3><small>المرحلة الخامسة · الرد على الاعتراضات</small></div><span class="status">ينتظر</span></div><div class="team-body"><div class="empty">ستظهر هنا الاعتراضات والتحسينات والاختيارات التي تم رفضها أو تعديلها.</div></div></article>
+    <article class="team-card" data-result="5"><div class="team-head"><div class="symbol" style="background:#e0f2e7;color:#176b58">★</div><div class="headtext"><h3>القرار النهائي وترتيب الحلول</h3><small>المرحلة السادسة · النتيجة الجامعة</small></div><span class="status">ينتظر</span></div><div class="team-body"><div class="empty">سيظهر الترتيب النهائي والفائز وأسباب الاختيار والقيود وخطوات العمل التالية.</div></div></article>
   </section>
-
-  <h2 class="section-title section-anchor" id="about">حول المشروع</h2>
-  <section class="panel"><h2>كيف يُختار الحل الأفضل؟</h2><p>يُطلب من Gemini تقييم الحلول وفق معايير موحدة: مدى ملاءمة الحل للمشكلة، والدقة، وسهولة التنفيذ، والتكلفة، والأمان، والمخاطر. يجب قراءة أسباب الترتيب والاعتراضات المهمة، وعدم اعتبار التقييم الآلي ضمانًا للصحة. في المهام الحساسة، راجع المعلومات مع مختص قبل التنفيذ.</p><p>لا توجد في هذه النسخة حسابات أعضاء بشرية أو ربط فعلي بـ ChatGPT أو Claude أو Notion؛ ستظهر هذه الإمكانات بعد تنفيذ الربط الخاص بها.</p></section>
-  <div class="footer">فريق العمل الذكي · نسخة تطويرية · Gemini عبر Cloudflare Worker</div>
+  <h2 class="section-title" id="about">حول المشروع</h2><section class="panel"><p>يستخدم الموقع خادم Cloudflare Worker الحالي للاتصال بـ Gemini. هذه النسخة تجري ستة استدعاءات متتابعة، ويستخدم كل استدعاء الدور المطلوب وسياقًا من المراحل السابقة. لذلك فإنها محاكاة منظمة عبر نموذج Gemini واحد، وليست اتصالًا مستقلًا بـ ChatGPT أو Claude. للحصول على نتائج موثوقة، يجب اختبار الادعاءات والدرجات الواردة في الردود ولا تُعد الدرجات دليلًا علميًا بحد ذاتها.</p></section>
+  <div class="footer">فريق العمل الذكي · تُرسل المهمة إلى Gemini عبر خادم Cloudflare Worker. لا تحتفظ هذه الصفحة بسجل دائم للمهام بعد إغلاقها أو تحديثها.</div>
 </main>
 </div>
 <script>
 'use strict';
 const WORKER_URL = 'https://ai-team-api.dilshad2101-8bb.workers.dev/';
-const $ = (id) => document.getElementById(id);
-let rounds = 0;
-let latestReport = '';
-
-document.querySelectorAll('[data-target]').forEach(button => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('[data-target]').forEach(item => item.classList.remove('active'));
-    button.classList.add('active');
-    const target = $(button.dataset.target);
-    if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
-  });
-});
-document.querySelectorAll('[data-example]').forEach(button => {
-  button.addEventListener('click', () => { $('task').value += button.dataset.example; $('task').focus(); });
-});
-
-function makeDiscussionPrompt(task) {
-  return `أنت منسق مجلس فرق افتراضي. حلّل المهمة التالية بعمق، ونفّذ محاكاة منظمة لأربعة فرق متخصصة. مهم جدًا: لا تدّع أن هناك نماذج ذكاء اصطناعي مستقلة أو مصادر خارجية شاركت؛ أنت نموذج واحد يحاكي أدوار الفرق الأربعة فقط. لا تخترع حقائق أو أسعارًا أو مصادر. إذا كانت المعلومات ناقصة فاذكر الافتراضات والأسئلة المفتوحة.\n\nالمهمة:\n${task}\n\nاتبع المراحل التالية بالترتيب:\n1) فريق الابتكار والاختراع: اقترح حلين مختلفين على الأقل، ثم اختر أقوى فكرة أولية واشرح سببها.\n2) فريق التحليل والتدقيق: راجع أفكار الابتكار، واذكر نقاط القوة والضعف والافتراضات غير المثبتة، واقترح تحسينات.\n3) فريق التنفيذ والتطوير: حوّل أفضل الأفكار إلى خطة تنفيذ واقعية بخطوات ومتطلبات واعتماديات، ولا تخترع تكلفة رقمية إن لم تتوفر بيانات.\n4) فريق الجودة والمخاطر: اختبر الحلول من ناحية الأمان والموثوقية والتكلفة والمخاطر والآثار الجانبية، واقترح تخفيف المخاطر.\n5) جولة النقد المتبادل: اذكر لكل فريق تعليقًا نقديًا محددًا على المقترحات التي قدمتها الفرق الأخرى، ثم بيّن كيف تُعدّل المقترحات استجابةً للنقد. لا تجعل الجميع يتفقون تلقائيًا؛ احتفظ بأي خلاف جوهري مع تفسيره.\n6) الترتيب النهائي: رتّب أفضل ثلاثة حلول من الأول إلى الثالث وفق معايير واضحة، وامنح كل حل درجة من 100 مع تفسير مختصر. استخدم معايير ملاءمة المشكلة، والدقة/الأدلة، وقابلية التنفيذ، والتكلفة، والأمان/المخاطر، واذكر حدود التقييم.\n7) القرار: اختر حلًا فائزًا واحدًا. إذا كان دمج عناصر من أكثر من حل أفضل، اشرح الدمج بوضوح. اذكر سبب فوزه، وأهم اعتراض متبقٍ، وخطوات العمل التالية.\n\nاكتب بالعربية الواضحة مع عناوين منظمة. لا تكتفِ بوصف طريقة العمل؛ نفّذ التحليل الفعلي للمهمة المحددة. اجعل الإجابة قابلة للقراءة والنسخ، ولا تضع الإجابة داخل JSON.`;
+const stageInfo = [
+  {title:'فريق الابتكار والاختراع', short:'ابتكار مقترحات', member:0, icon:'✳', prompt:(task)=>`أنت الآن تعمل بدور فريق الابتكار والاختراع ضمن فريق عمل متعدد المراحل. المهمة الأصلية:\n${task}\n\nاقترح من 3 إلى 5 حلول مختلفة فعلًا. لكل حل: الاسم، الفكرة، آلية العمل، المستفيد، أهم ميزة، أصعب تحدٍّ، والافتراضات التي تحتاج إلى اختبار. لا تدّع أن أي حل مُثبت أو حاصل على براءة اختراع ما لم يوجد دليل في المعطيات. اكتب بالعربية المنظمة.`},
+  {title:'فريق التحليل والتدقيق', short:'تدقيق الأفكار', member:1, icon:'⌕', prompt:(task,ctx)=>`أنت فريق التحليل والتدقيق. المهمة الأصلية:\n${task}\n\nمقترحات فريق الابتكار:\n${ctx}\n\nدقّق كل مقترح: مدى ملاءمته للمشكلة، نقاط القوة والضعف، الافتراضات غير المثبتة، المخاطر المنطقية أو العلمية، ما يلزم التحقق منه، وتحسينات محددة. لا ترفض الفكرة لمجرد أنها جديدة ولا تخترع مصادر أو أرقامًا. رتّب ملاحظاتك بوضوح وبالعربية.`},
+  {title:'فريق التنفيذ والتطوير', short:'بناء خطة التنفيذ', member:2, icon:'⚙', prompt:(task,ctx)=>`أنت فريق التنفيذ والتطوير. المهمة الأصلية:\n${task}\n\nنتائج المراحل السابقة:\n${ctx}\n\nحوّل أفضل الأفكار إلى خطة قابلة للتنفيذ. حدّد نموذج إثبات مفهوم صغيرًا، المكونات أو الموارد المطلوبة دون اختراع أسعار، مراحل العمل، الاختبارات، مؤشرات النجاح/الفشل، الاعتماديات، وأكبر أسباب احتمال التعثر. ميّز بين ما يمكن تنفيذه الآن وما يتطلب بحثًا أو اختبارًا. اكتب بالعربية.`},
+  {title:'فريق الجودة والمخاطر', short:'فحص المخاطر', member:3, icon:'✓', prompt:(task,ctx)=>`أنت فريق الجودة والمخاطر. المهمة الأصلية:\n${task}\n\nنتائج الابتكار والتحليل والتنفيذ:\n${ctx}\n\nنفّذ مراجعة مستقلة من منظور السلامة والجودة والخصوصية والموثوقية والتكلفة والصيانة وتجربة المستخدم. اعرض لكل خطر: الوصف، الاحتمال (منخفض/متوسط/مرتفع، كتقدير أولي فقط)، الأثر، طريقة التخفيف، وطريقة اختبار فعالية التخفيف. اذكر المخاطر التي قد تمنع الإطلاق، والاختبارات المطلوبة قبل استخدام حقيقي. لا توحِ بأن التقييم بديل عن اختبار أو استشارة مختص. اكتب بالعربية.`},
+  {title:'جولة النقد المتبادل والتحسين', short:'نقد وتحسين', member:null, icon:'↔', prompt:(task,ctx)=>`أنت منسق جولة النقد المتبادل. المهمة الأصلية:\n${task}\n\nملخص نتائج الفرق الأربعة:\n${ctx}\n\nلا تكرر النتائج فقط. قارن بينها واكتب: (1) أقوى اعتراضات على كل خيار مهم، (2) ردًا منطقيًا على الاعتراضات بالاستناد إلى المعطيات، (3) نقاط الاتفاق والاختلاف الحقيقي، (4) ما الذي يجب تعديله بعد النقد، (5) الخيارات التي ينبغي استبعادها وسبب ذلك، (6) المسائل التي لا تزال غير محسومة وتحتاج اختبارًا. لا تختلق اقتباسات حرفية من فرق حقيقية؛ هذه أدوار مرحلية. اكتب بالعربية.`},
+  {title:'القرار النهائي وترتيب الحلول', short:'ترتيب واتخاذ القرار', member:null, icon:'★', prompt:(task,ctx)=>`أنت لجنة القرار النهائي للمهمة التالية:\n${task}\n\nنتائج الفرق والنقد المتبادل:\n${ctx}\n\nاخرج بقرار نهائي واضح ومنظم يتضمن: 1) جدول ترتيب لأفضل الحلول، 2) معايير مقارنة مناسبة مع أوزان مجموعها 100% أو 100 نقطة، 3) درجات تقديرية مع شرح أنها تقديرات تحليلية وليست قياسات مختبرية إن لم توجد بيانات فعلية، 4) الحل الفائز وسبب فوزه، 5) ما الذي يجعل البدائل أقل ترتيبًا، 6) أكبر اعتراض أو عدم يقين متبقٍ، 7) خطة عمل للخطوات الثلاث الأولى مع اختبار نجاح/فشل لكل خطوة، 8) ما يلزم جمعه من بيانات قبل الالتزام بتكلفة أو إطلاق. إذا كانت الأدلة غير كافية، صرّح بذلك ولا تمنح دقة زائفة. اختم بقرار مختصر قابل للنسخ. اكتب بالعربية.`}
+];
+const results = Array(6).fill('');
+let busy = false, taskCount = 0, completedCount = 0;
+const $ = id => document.getElementById(id);
+function clip(s, max=4200){s=String(s||''); return s.length>max ? s.slice(0,max)+'\n[اختُصر جزء من النص لإبقاء الطلب ضمن حجم مناسب]' : s;}
+function combinedBefore(index){
+  const maxPer = index >= 4 ? 2500 : 3900;
+  const lines=[];
+  for(let i=0;i<index;i++){if(results[i]) lines.push('### '+stageInfo[i].title+'\n'+clip(results[i],maxPer));}
+  return lines.join('\n\n');
 }
-
-function addCopyButton(container, text, label='نسخ النص') {
-  const wrap = document.createElement('div');
-  wrap.className = 'card-actions';
-  const btn = document.createElement('button');
-  btn.className = 'copy-btn';
-  btn.type = 'button';
-  btn.textContent = label;
-  btn.addEventListener('click', async () => {
-    try {
-      await copyText(text);
-      btn.textContent = 'تم النسخ ✓';
-      setTimeout(() => { btn.textContent = label; }, 1600);
-    } catch {
-      btn.textContent = 'تعذر النسخ';
-    }
-  });
-  wrap.appendChild(btn);
-  container.appendChild(wrap);
+function allText(){const task=$('task').value.trim();const pieces=['المهمة الأصلية:\n'+task];stageInfo.forEach((s,i)=>{if(results[i])pieces.push('===== '+s.title+' =====\n'+results[i]);});return pieces.join('\n\n');}
+function setPill(text,ok=false){$('connectionPill').textContent='● '+text;$('connectionPill').classList.toggle('connection',ok);}
+function setProgress(done, currentText){const pct=Math.round(done/6*100);$('progressPanel').classList.remove('hide');$('progressText').textContent=currentText;$('progressPercent').textContent=pct+'%';$('progressFill').style.width=pct+'%';$('progressDetail').textContent=`اكتملت ${done} من 6 مراحل. لا تغلق الصفحة أثناء انتظار الرد.`;}
+function setStageState(i,state,message){
+ const card=document.querySelector(`[data-result="${i}"]`);const cardStatus=card.querySelector('.team-head .status');const step=document.querySelector(`[data-step="${i}"]`);const stepStatus=step.querySelector('.status');
+ cardStatus.textContent=message;cardStatus.className='status'+(state==='done'?' ok':state==='error'?' fail':'');stepStatus.textContent=message;stepStatus.className='status'+(state==='done'?' ok':state==='error'?' fail':'');step.classList.toggle('active',state==='active');step.classList.toggle('done',state==='done');step.classList.toggle('error',state==='error');
+ if(i<4){const memberStatus=$('memberStatus'+i);memberStatus.textContent=message;memberStatus.className='status'+(state==='done'?' ok':state==='error'?' fail':'');}
 }
-
-async function copyText(text) {
-  if (navigator.clipboard && window.isSecureContext) {
-    await navigator.clipboard.writeText(text);
-    return;
+function showOutput(i,text){
+ const card=document.querySelector(`[data-result="${i}"]`);const body=card.querySelector('.team-body');body.textContent='';const output=document.createElement('div');output.className='team-output';output.textContent=text;body.appendChild(output);
+ const actions=document.createElement('div');actions.className='card-actions';const copy=document.createElement('button');copy.className='copy-btn';copy.textContent='نسخ إجابة هذا القسم';copy.type='button';copy.addEventListener('click',()=>copyText(stageInfo[i].title+'\n\n'+results[i],copy));actions.appendChild(copy);body.appendChild(actions);
+}
+async function copyText(text,button){
+ const old=button.textContent;
+ try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);}else{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();const ok=document.execCommand('copy');ta.remove();if(!ok)throw new Error('تعذر نسخ النص تلقائيًا.');}button.textContent='تم النسخ ✓';setTimeout(()=>button.textContent=old,1800);}
+ catch(e){alert('لم يتم النسخ تلقائيًا. حاول مرة أخرى أو حدّد النص وانسخه يدويًا.');}
+}
+async function askWorker(prompt){
+ const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),180000);
+ try{
+  const response=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt}),signal:controller.signal});
+  let data;try{data=await response.json();}catch(e){throw new Error('رد الخادم ليس بصيغة JSON.');}
+  if(!response.ok||!data.ok){let msg=data&&data.error?data.error:'فشل الاتصال بالخادم.';if(data&&data.status)msg+='\nرمز الحالة: '+data.status;if(data&&data.details)msg+='\nالتفاصيل: '+clip(data.details,900);throw new Error(msg);}
+  if(typeof data.text!=='string'||!data.text.trim())throw new Error('رد Gemini فارغ أو لا يحتوي على النص المتوقع.');
+  return data.text.trim();
+ }catch(e){if(e&&e.name==='AbortError')throw new Error('تأخر الرد أكثر من 3 دقائق. تحقق من الاتصال ثم ابدأ المهمة من جديد.');if(e&&e.message==='Failed to fetch')throw new Error('تعذر الوصول إلى الخادم. تحقق من اتصال الإنترنت وإعدادات الخادم.');throw e;}
+ finally{clearTimeout(timeout);}
+}
+function resetView(){
+ for(let i=0;i<6;i++){results[i]='';setStageState(i,'idle','ينتظر');const card=document.querySelector(`[data-result="${i}"]`);const body=card.querySelector('.team-body');body.innerHTML='<div class="empty">'+['ستظهر هنا أفكار الفريق بعد انتهاء المرحلة الأولى.','ستظهر هنا مراجعة الفريق بعد تلقي أفكار الابتكار.','ستظهر هنا خطة التنفيذ مع الاستفادة من نتائج المرحلتين السابقتين.','ستظهر هنا مراجعة الجودة والمخاطر.','ستظهر هنا الاعتراضات والتحسينات والاختيارات التي تم رفضها أو تعديلها.','سيظهر الترتيب النهائي والفائز وأسباب الاختيار والقيود وخطوات العمل التالية.'][i]+'</div>';}
+ $('copyAll').disabled=true;$('copyFinal').disabled=true;$('progressPanel').classList.add('hide');$('progressFill').style.width='0%';
+}
+async function runTask(){
+ const task=$('task').value.trim();if(!task){alert('اكتب المهمة أولًا.');$('task').focus();return;}if(busy)return;
+ busy=true;taskCount++;$('count').textContent=String(taskCount);resetView();$('send').disabled=true;$('clearBtn').disabled=true;$('send').textContent='جارٍ تنفيذ مراحل النقاش...';setPill('جارٍ الاتصال بـ Gemini');
+ try{
+  for(let i=0;i<6;i++){
+   setStageState(i,'active','قيد التنفيذ');setProgress(i,`المرحلة ${i+1} من 6: ${stageInfo[i].title}`);
+   const ctx=combinedBefore(i);const prompt=stageInfo[i].prompt(task,ctx);
+   const answer=await askWorker(prompt);results[i]=answer;showOutput(i,answer);setStageState(i,'done','اكتملت');setProgress(i+1,`اكتملت المرحلة ${i+1} من 6`);
+   $('copyAll').disabled=false;if(i===5)$('copyFinal').disabled=false;
   }
-  const area = document.createElement('textarea');
-  area.value = text;
-  area.style.position = 'fixed'; area.style.opacity = '0'; area.style.insetInlineStart = '-9999px';
-  document.body.appendChild(area); area.focus(); area.select();
-  const ok = document.execCommand('copy');
-  area.remove();
-  if (!ok) throw new Error('copy failed');
+  completedCount++;$('completedCount').textContent=String(completedCount);setPill('اكتملت المراحل الست بنجاح',true);$('progressDetail').textContent='اكتملت المراحل الست. يمكنك نسخ إجابة كل فريق أو نسخ جميع النتائج.';
+ }catch(error){
+  setPill('توقفت المهمة بسبب خطأ');const msg=error&&error.message?error.message:'حدث خطأ غير معروف.';const next=results.findIndex((x,i)=>!x);let idx=next===-1?5:next;
+  const card=document.querySelector(`[data-result="${idx}"]`);const body=card.querySelector('.team-body');body.innerHTML='';const box=document.createElement('div');box.className='error-box';box.textContent='تعذر إكمال هذه المرحلة.\n\n'+msg+'\n\nالنتائج المكتملة سابقًا ما زالت ظاهرة، لكن إعادة المحاولة ستبدأ المهمة من المرحلة الأولى.';body.appendChild(box);setStageState(idx,'error','تعذر الإكمال');$('progressText').textContent='توقفت العملية';$('progressDetail').textContent='افحص اتصال الإنترنت أو إعدادات الخدمة، ثم حاول مجددًا.';
+ }finally{busy=false;$('send').disabled=false;$('clearBtn').disabled=false;$('send').textContent='أعد تنفيذ المراحل الست ←';}
 }
-
-function makeCard(title, text, options={}) {
-  const card = document.createElement('article');
-  card.className = 'answer-card' + (options.winner ? ' winner' : '');
-  const heading = document.createElement('h3');
-  if (options.rank) {
-    const rank = document.createElement('span'); rank.className = 'rank'; rank.textContent = options.rank; heading.appendChild(rank);
-  }
-  const titleText = document.createElement('span'); titleText.textContent = title; heading.appendChild(titleText);
-  if (options.winner) {
-    const badge = document.createElement('span'); badge.className = 'winner-label'; badge.textContent = 'الحل المختار'; heading.appendChild(badge);
-  }
-  card.appendChild(heading);
-  const body = document.createElement('div'); body.className = 'answer-text'; body.textContent = text; card.appendChild(body);
-  addCopyButton(card, title + '\n\n' + text, 'نسخ هذا القسم');
-  return card;
-}
-
-function renderReport(text) {
-  const grid = $('resultsGrid'); grid.replaceChildren();
-  // Keep the model's complete, unaltered answer visible and copyable, while showing a clear decision panel.
-  const winnerMatch = text.match(/(?:القرار النهائي|الحل الفائز|الحل المختار|الفائز)[\s:：\-]*([\s\S]{0,1800}?)(?=\n#{1,3}\s|\n(?:الترتيب النهائي|أهم اعتراض|خطوات العمل التالية|الخلاصة)\s*[:：]?|$)/i);
-  const rankingMatch = text.match(/(?:الترتيب النهائي|ترتيب الحلول|أفضل ثلاثة حلول)[\s:：\-]*([\s\S]{0,2200}?)(?=\n#{1,3}\s|\n(?:القرار النهائي|الحل الفائز|الحل المختار|الخلاصة)\s*[:：]?|$)/i);
-  if (rankingMatch && rankingMatch[1].trim()) grid.appendChild(makeCard('ترتيب المقترحات', rankingMatch[1].trim(), {rank:'1'}));
-  if (winnerMatch && winnerMatch[1].trim()) grid.appendChild(makeCard('القرار والحل الفائز', winnerMatch[1].trim(), {winner:true}));
-  grid.appendChild(makeCard('التقرير الكامل: المقترحات والنقد والتحسينات', text));
-  latestReport = text;
-  $('stage').textContent = 'اكتملت الجولة. اقرأ النقد والاعتراضات قبل اعتماد الحل، ويمكنك نسخ أي قسم أو التقرير كاملًا.';
-  $('results').classList.add('show');
-}
-
-$('send').addEventListener('click', async () => {
-  const task = $('task').value.trim();
-  const button = $('send');
-  const pill = $('connectionPill');
-  if (!task) { alert('اكتب المهمة أولًا.'); $('task').focus(); return; }
-  button.disabled = true;
-  button.textContent = 'الفرق تناقش المقترحات الآن...';
-  pill.textContent = '● Gemini: جارٍ تنفيذ جولة النقاش';
-  $('results').classList.add('show');
-  $('resultsGrid').replaceChildren();
-  $('stage').textContent = 'جارٍ توليد المقترحات والنقد المتبادل والترتيب النهائي. قد يستغرق ذلك بعض الوقت.';
-  try {
-    const response = await fetch(WORKER_URL, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({prompt:makeDiscussionPrompt(task)})
-    });
-    let data;
-    try { data = await response.json(); } catch { throw new Error('رد الخادم ليس بصيغة JSON. تأكد من نشر Cloudflare Worker.'); }
-    if (!response.ok || !data.ok) {
-      let message = data.error || 'فشل الاتصال بالخادم.';
-      if (data.status) message += '\nرمز الخطأ من Gemini: ' + data.status;
-      if (data.details) message += '\nالتفاصيل: ' + data.details;
-      throw new Error(message);
-    }
-    if (!data.text || !String(data.text).trim()) throw new Error('لم تصل إجابة نصية من Gemini.');
-    rounds++;
-    $('count').textContent = String(rounds);
-    $('verifiedCount').textContent = '1';
-    pill.textContent = '● Gemini: الاتصال ناجح';
-    renderReport(String(data.text).trim());
-    $('results').scrollIntoView({behavior:'smooth',block:'start'});
-  } catch (error) {
-    const message = error && error.message ? error.message : 'حدث خطأ غير معروف.';
-    const grid = $('resultsGrid'); grid.replaceChildren();
-    grid.appendChild(makeCard('تعذر إكمال جولة النقاش', message + '\n\nلا ترسل مفتاح API إلى أي شخص.', {rank:'!'}));
-    $('stage').textContent = 'لم تكتمل الجولة. راجع رسالة الخطأ وأعد المحاولة.';
-    pill.textContent = '● Gemini: فشل الاتصال';
-  } finally {
-    button.disabled = false;
-    button.textContent = 'ابدأ النقاش بين الفرق ←';
-  }
-});
-
-async function copyFullReport(button) {
-  if (!latestReport) { alert('لا يوجد تقرير لنسخه بعد.'); return; }
-  try {
-    await copyText(latestReport);
-    const old = button.textContent; button.textContent = 'تم نسخ التقرير ✓';
-    setTimeout(() => { button.textContent = old; }, 1600);
-  } catch { alert('تعذر النسخ تلقائيًا. اضغط مطولًا على النص وحدده لنسخه.'); }
-}
-$('copyAll').addEventListener('click', function(){ copyFullReport(this); });
-$('copyReportBottom').addEventListener('click', function(){ copyFullReport(this); });
-$('newTask').addEventListener('click', () => { $('task').focus(); $('task').scrollIntoView({behavior:'smooth',block:'center'}); });
+$('send').addEventListener('click',runTask);
+$('copyAll').addEventListener('click',()=>copyText(allText(),$('copyAll')));
+$('copyFinal').addEventListener('click',()=>{if(results[5])copyText('المهمة الأصلية:\n'+$('task').value.trim()+'\n\n'+stageInfo[5].title+'\n\n'+results[5],$('copyFinal'));});
+$('clearBtn').addEventListener('click',()=>{if(busy)return;$('task').value='';resetView();setPill('لم يُختبر بعد');});
+document.querySelectorAll('[data-target]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-target]').forEach(x=>x.classList.remove('active'));b.classList.add('active');const el=$(b.dataset.target);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}));
+document.querySelectorAll('[data-example]').forEach(b=>b.addEventListener('click',()=>{$('task').value=b.dataset.example;$('task').focus();}));
 </script>
 </body>
 </html>
