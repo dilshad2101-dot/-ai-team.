@@ -1,68 +1,206 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#12372f"><title>فريق العمل الذكي</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#12372f">
+<title>فريق العمل الذكي</title>
 <style>
-:root{--green:#176b58;--dark:#12372f;--bg:#f3f7f5;--line:#dfe9e3;--muted:#6c7e75}*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:#1c3029}button,textarea,input{font:inherit}.wrap{max-width:1000px;margin:auto;padding:18px}.top{background:linear-gradient(120deg,#12372f,#19745e);color:white;padding:25px;border-radius:18px;margin-bottom:16px}.top h1{font-size:25px;margin:0 0 10px}.top p{line-height:1.9;font-size:13px;margin:0;color:#d9ece4}.status{font-size:11px;margin-top:12px;display:inline-block;background:#ffffff20;border-radius:20px;padding:7px 10px}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:15px}.panel h2{font-size:16px;margin:0 0 10px}.hint{font-size:12px;line-height:1.9;color:var(--muted)}textarea{width:100%;min-height:130px;border:1px solid var(--line);border-radius:11px;padding:12px;line-height:1.9;resize:vertical;background:#fbfdfc}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}.primary{background:var(--green);color:#fff;border:0;border-radius:10px;padding:12px 16px;font-weight:bold}.secondary,.copy{background:white;border:1px solid #cbdcd3;color:#285a49;border-radius:9px;padding:9px 12px}.danger{background:#fff1ec;border:1px solid #efc9bc;color:#8d3d25;border-radius:9px;padding:9px 12px}.primary:disabled{opacity:.6}.filebox{margin-top:13px;background:#f7fbf9;border:1px dashed #a9c8bb;padding:13px;border-radius:12px}.pick{display:inline-block;padding:10px 12px;background:white;border:1px solid var(--line);border-radius:9px;font-size:12px;cursor:pointer}#files{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.filelist{display:grid;gap:7px;margin-top:10px}.fileitem{display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--line);padding:8px;border-radius:8px;font-size:11px}.fileitem span{flex:1;overflow-wrap:anywhere}.remove{border:0;background:#fff0eb;color:#94452d;padding:6px 8px;border-radius:7px}.small{font-size:10px;line-height:1.8;color:var(--muted)}.result{display:none;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.9;font-size:13px;margin-top:14px;padding:14px;background:#f4faf6;border:1px solid #d5e8dc;border-radius:12px}.result.show{display:block}.result.error{background:#fff6f2;border-color:#f0d4c6;color:#8b3f25}.outhead{display:flex;justify-content:space-between;align-items:center;gap:8px}.stage{background:white;border:1px solid var(--line);border-radius:10px;margin-top:9px;overflow:hidden}.stage summary{padding:12px;background:#f7faf8;cursor:pointer;font-weight:bold}.stagebody{padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.9}.recordbox{margin-top:14px;border:1px solid var(--line);background:#fbfdfc;border-radius:12px;padding:13px}.recordstatus{font-size:12px;line-height:1.9;color:#4c655a;margin-top:8px}.recording{color:#a83b2a;font-weight:bold}.preview{width:100%;max-height:280px;margin-top:10px;background:#111;border-radius:10px}.notice{padding:11px;border-radius:10px;background:#fff8e8;border:1px solid #f0dfae;color:#785c19;font-size:11px;line-height:1.9;margin-top:10px}.footer{text-align:center;color:#819189;font-size:10px;padding:12px}@media(max-width:600px){.wrap{padding:11px}.top{padding:20px}.top h1{font-size:22px}.panel{padding:13px}}
-</style></head><body><main class="wrap">
-<header class="top"><h1>✦ فريق العمل الذكي</h1><p>اكتب مهمتك، أرفق صورًا وملفات، أو سجّل الشاشة بالفيديو والصوت ثم أرسل المحتوى للتحليل عبر المراحل الست.</p><span class="status" id="status">الخادم: لم يُختبر بعد</span></header>
-<section class="panel"><h2>إرسال مهمة جديدة</h2><p class="hint">يمكنك إرفاق حتى 5 ملفات. الصور المدعومة PNG وJPG وWebP، والملفات النصية TXT وMD وCSV وJSON. حجم الملف العادي حتى 4 ميغابايت. تسجيل الشاشة مدته القصوى 30 ثانية وحجمه حتى 10 ميغابايت.</p>
-<textarea id="prompt" placeholder="اكتب ما تريد تحليله. مثال: شاهد التسجيل، لخّص ما يحدث، اكتشف المشكلة واقترح حلًا خطوة بخطوة..."></textarea>
-<div class="filebox"><div class="actions" style="margin-top:0"><label class="pick" for="files">＋ اختيار صور وملفات</label><input id="files" type="file" multiple accept="image/png,image/jpeg,image/webp,text/plain,text/markdown,text/csv,application/json,.txt,.md,.csv,.json"><button class="secondary" id="clear" type="button">إزالة كل الملفات</button></div><div id="filelist" class="filelist"></div><p class="small">تُرسل المرفقات عند الضغط على زر الإرسال فقط. لا ترفع كلمات مرور أو معلومات سرية.</p></div>
-<div class="recordbox"><h2>تسجيل الشاشة بالفيديو والصوت</h2><p class="hint">اضغط بدء التسجيل، ثم اختر الشاشة من نافذة المتصفح. سيحاول الموقع تسجيل صوت الميكروفون وصوت الجهاز إذا كانا مدعومين. يجب أن توافق بنفسك على مشاركة الشاشة.</p><div class="actions"><button id="startRec" class="primary" type="button">● بدء تسجيل الشاشة</button><button id="stopRec" class="danger" type="button" disabled>■ إيقاف التسجيل</button><button id="discardRec" class="secondary" type="button" disabled>حذف التسجيل</button></div><div id="recStatus" class="recordstatus" aria-live="polite">لا يوجد تسجيل حاليًا.</div><video id="preview" class="preview" controls playsinline hidden></video><div class="notice">قد يمنع بعض متصفحات Android مشاركة الشاشة أو تسجيل صوت الجهاز. إذا لم يدعم المتصفح ذلك، ستظهر رسالة واضحة. عند تعذر صوت الجهاز، قد يُسجَّل صوت الميكروفون فقط.</div></div>
-<div class="actions"><button id="send" class="primary" type="button">إرسال المهمة للتحليل ←</button><button id="clearPrompt" class="secondary" type="button">مسح النص</button></div><div id="result" class="result" aria-live="polite"></div>
-</section><div class="footer">فريق العمل الذكي · المراحل الست · رفع الملفات والصور وتسجيل الشاشة</div></main>
+:root{--green:#176b58;--dark:#12372f;--bg:#f3f7f5;--line:#dfe9e3;--muted:#6c7e75;--danger:#923f2e}*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:#1c3029}button,textarea,input,select{font:inherit}.wrap{max-width:920px;margin:auto;padding:16px}.top{background:linear-gradient(120deg,#12372f,#19745e);color:#fff;padding:24px;border-radius:18px;margin-bottom:15px}.top h1{font-size:25px;margin:0 0 8px}.top p{font-size:13px;line-height:1.9;margin:0;color:#d9ece4}.status{font-size:11px;margin-top:12px;display:inline-block;background:#ffffff20;border-radius:20px;padding:7px 10px}.panel{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;margin-bottom:13px}.panel h2{font-size:16px;margin:0 0 10px}.hint{font-size:12px;line-height:1.9;color:var(--muted)}textarea{display:block;width:100%;min-height:115px;border:1px solid var(--line);border-radius:11px;padding:12px;line-height:1.9;resize:vertical;background:#fbfdfc;color:#1c3029}.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.mode-option{position:relative;display:block;border:1px solid var(--line);border-radius:11px;padding:12px;cursor:pointer;background:#fff}.mode-option:has(input:checked){border:2px solid var(--green);padding:11px;background:#f2faf6}.mode-option input{margin-left:6px;accent-color:var(--green)}.mode-option b{font-size:13px}.mode-option small{display:block;color:var(--muted);font-size:11px;line-height:1.7;margin-top:5px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px;align-items:center}.primary{background:var(--green);color:#fff;border:0;border-radius:10px;padding:12px 16px;font-weight:bold}.secondary,.copy{background:white;border:1px solid #cbdcd3;color:#285a49;border-radius:9px;padding:9px 12px}.danger{background:#fff1ec;border:1px solid #efc9bc;color:var(--danger);border-radius:9px;padding:9px 12px}.primary:disabled{opacity:.58}.filebox,.recordbox{margin-top:12px;background:#f7fbf9;border:1px dashed #a9c8bb;padding:12px;border-radius:12px}.pick{display:inline-block;padding:10px 12px;background:white;border:1px solid var(--line);border-radius:9px;font-size:12px;cursor:pointer}#files{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.filelist{display:grid;gap:7px;margin-top:9px}.fileitem{display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--line);padding:8px;border-radius:8px;font-size:11px}.fileitem span{flex:1;overflow-wrap:anywhere}.remove{border:0;background:#fff0eb;color:#94452d;padding:6px 8px;border-radius:7px}.small{font-size:10px;line-height:1.8;color:var(--muted)}.result{display:none;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.95;font-size:14px;margin-top:13px;padding:14px;background:#f4faf6;border:1px solid #d5e8dc;border-radius:12px}.result.show{display:block}.result.error{background:#fff6f2;border-color:#f0d4c6;color:var(--danger)}.outhead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:9px}.stage{background:#fff;border:1px solid var(--line);border-radius:10px;margin-top:8px;overflow:hidden}.stage summary{padding:11px;background:#f7faf8;cursor:pointer;font-weight:bold;font-size:12px}.stagebody{padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.9}.recordstatus{font-size:12px;line-height:1.9;color:#4c655a;margin-top:8px}.recording{color:#a83b2a;font-weight:bold}.preview{width:100%;max-height:280px;margin-top:10px;background:#111;border-radius:10px}.notice{padding:10px;border-radius:10px;background:#fff8e8;border:1px solid #f0dfae;color:#785c19;font-size:11px;line-height:1.9;margin-top:10px}.sources{margin-top:12px;padding-top:8px;border-top:1px solid var(--line);font-size:12px}.sources a{display:block;color:#176b58;overflow-wrap:anywhere;margin:7px 0}.footer{text-align:center;color:#819189;font-size:10px;padding:12px}button{cursor:pointer}@media(max-width:560px){.wrap{padding:10px}.top{padding:18px}.top h1{font-size:22px}.panel{padding:12px}.mode-grid{grid-template-columns:1fr}.primary{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>فريق العمل الذكي</h1>
+    <p>إجابات مباشرة للأسئلة البسيطة، أو مراجعة متعمقة عبر ست مراحل للمهام المعقدة. يمكنك إرفاق ملفات وصور أو تسجيل الشاشة لتحليلها.</p>
+    <span class="status" id="status">الخادم: لم يُختبر الاتصال بعد</span>
+  </header>
+
+  <section class="panel">
+    <h2>ما المهمة التي تريد إنجازها؟</h2>
+    <textarea id="prompt" maxlength="30000" placeholder="اكتب سؤالك أو اشرح المهمة هنا..."></textarea>
+    <div class="mode-grid" role="group" aria-label="طريقة الإجابة">
+      <label class="mode-option"><input type="radio" name="mode" value="quick" checked><b>الإجابة السريعة</b><small>طلب واحد للأسئلة البسيطة، وإجابة مباشرة دون تقارير طويلة.</small></label>
+      <label class="mode-option"><input type="radio" name="mode" value="team"><b>فريق العمل — 6 مراحل</b><small>تحليل ونقد وتحقق ومقارنة ثم إجابة نهائية. يستغرق وقتًا أطول.</small></label>
+    </div>
+    <div class="actions"><button class="primary" id="send" type="button">إرسال</button><button class="secondary" id="clearPrompt" type="button">مسح السؤال</button></div>
+  </section>
+
+  <section class="panel">
+    <h2>الملفات والصور</h2>
+    <div class="hint">يمكن إرفاق حتى 5 ملفات: صور PNG/JPG/WebP، فيديو MP4/WebM، وملفات TXT/MD/CSV/JSON. حجم الملف العادي حتى 4 ميغابايت، والفيديو حتى 10 ميغابايت، ومجموع المرفقات حتى 12 ميغابايت.</div>
+    <div class="filebox"><label class="pick" for="files">اختيار الملفات</label><input id="files" type="file" multiple accept=".txt,.md,.csv,.json,.png,.jpg,.jpeg,.webp,.mp4,.webm,text/plain,text/markdown,text/csv,application/json,image/png,image/jpeg,image/webp,video/mp4,video/webm"><div id="filelist" class="filelist"></div><div class="actions"><button class="secondary" id="clearFiles" type="button">حذف جميع المرفقات</button></div></div>
+  </section>
+
+  <section class="panel">
+    <h2>تسجيل الشاشة والصوت</h2>
+    <div class="hint">التسجيل متاح فقط إذا كان المتصفح يدعم مشاركة الشاشة. قد يختلف تسجيل صوت الجهاز حسب الهاتف والمتصفح؛ يسمح الموقع بطلب الميكروفون بعد موافقتك. الحد الأقصى 30 ثانية و10 ميغابايت.</div>
+    <div class="recordbox"><div class="actions" style="margin-top:0"><button id="startRec" class="secondary" type="button">● بدء تسجيل الشاشة</button><button id="stopRec" class="secondary" type="button" disabled>إيقاف التسجيل</button><button id="discardRec" class="danger" type="button" disabled>حذف التسجيل</button></div><div id="recStatus" class="recordstatus">لم يبدأ التسجيل.</div><video id="preview" class="preview" controls playsinline hidden></video></div>
+    <div class="notice">تنبيه: تحليل الصوت والصورة يعتمد على محتوى التسجيل الذي يرسله المتصفح إلى النموذج. لا ترسل تسجيلات تتضمن معلومات خاصة لا تريد مشاركتها.</div>
+  </section>
+
+  <section class="panel">
+    <div class="outhead"><h2 style="margin:0">النتيجة</h2><button class="copy" id="copyResult" type="button" disabled>نسخ النتيجة</button></div>
+    <div id="result" class="result" aria-live="polite"></div>
+    <div id="sources" class="sources" hidden><b>المصادر التي أعادها البحث</b><div id="sourceList"></div></div>
+    <div id="stages" hidden></div>
+  </section>
+  <footer class="footer">فريق العمل الذكي — لا تشارك مفاتيح API أو كلمات المرور في خانة السؤال.</footer>
+</div>
 <script>
 'use strict';
-const API='https://ai-team-api.dilshad2101-8bb.workers.dev/';
-const MAX_FILES=5, MAX_SIZE=4*1024*1024, MAX_VIDEO=10*1024*1024, MAX_RECORD_MS=30000;
-const allowed=new Set(['image/png','image/jpeg','image/webp','text/plain','text/markdown','text/csv','application/json']);
-let selected=[],recorder=null,recordedBlob=null,recordedUrl=null,displayStream=null,micStream=null,audioContext=null,recordTimer=null;
-const $=id=>document.getElementById(id),input=$('files'),list=$('filelist'),result=$('result'),send=$('send'),statusEl=$('status'),recStatus=$('recStatus'),preview=$('preview');
-function renderFiles(){list.replaceChildren();selected.forEach((f,i)=>{const row=document.createElement('div');row.className='fileitem';const label=document.createElement('span');label.textContent=`${f.name} — ${(f.size/1024).toFixed(0)} KB`;const remove=document.createElement('button');remove.className='remove';remove.type='button';remove.textContent='إزالة';remove.onclick=()=>{selected.splice(i,1);renderFiles()};row.append(label,remove);list.append(row)})}
-function addSelectedFile(file){if(selected.length>=MAX_FILES){alert('الحد الأقصى خمسة مرفقات. احذف ملفًا أولًا.');return false}if(!file.type.startsWith('video/')&&file.size>MAX_SIZE){alert('الحد الأقصى للملف العادي 4 ميغابايت.');return false}if(file.type.startsWith('video/')&&file.size>MAX_VIDEO){alert('حجم التسجيل أكبر من 10 ميغابايت؛ سجّل مدة أقصر.');return false}if(!file.type.startsWith('video/')&&!allowed.has(file.type)){alert('نوع الملف غير مدعوم: '+file.name);return false}if(selected.some(x=>x.name===file.name&&x.size===file.size)){alert('هذا الملف مضاف بالفعل.');return false}selected.push(file);renderFiles();return true}
-input.addEventListener('change',()=>{for(const f of Array.from(input.files||[]))addSelectedFile(f);input.value=''});
-$('clear').onclick=()=>{selected=selected.filter(f=>!f.type.startsWith('video/'));renderFiles()};$('clearPrompt').onclick=()=>$('prompt').value='';
-function readBase64(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>{const s=String(r.result||'');resolve(s.slice(s.indexOf(',')+1))};r.onerror=()=>reject(new Error('تعذرت قراءة الملف: '+file.name));r.readAsDataURL(file)})}
-function readText(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result||''));r.onerror=()=>reject(new Error('تعذرت قراءة الملف: '+file.name));r.readAsText(file)})}
-async function copyText(text){try{await navigator.clipboard.writeText(text);alert('تم النسخ')}catch(e){const t=document.createElement('textarea');t.value=text;document.body.append(t);t.select();const ok=document.execCommand('copy');t.remove();alert(ok?'تم النسخ':'تعذر النسخ؛ حدّد النص وانسخه يدويًا')}}
-function showError(message){result.className='result show error';result.textContent='لم تنجح العملية:\n'+message}
-function stopTracks(stream){if(stream)stream.getTracks().forEach(t=>{try{t.stop()}catch(e){}})}
-async function startRecording(){
- if(!navigator.mediaDevices||!navigator.mediaDevices.getDisplayMedia){recStatus.textContent='هذا المتصفح لا يدعم التقاط الشاشة. افتح الموقع في متصفح حديث يدعم مشاركة الشاشة.';return}
- if(selected.length>=MAX_FILES){recStatus.textContent='قائمة المرفقات ممتلئة. احذف ملفًا قبل التسجيل.';return}
- $('startRec').disabled=true;$('startRec').textContent='جارٍ طلب إذن الشاشة...';
- try{
-  displayStream=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:{ideal:12,max:15}},audio:true});
-  try{micStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}})}catch(e){micStream=null}
-  const tracks=[...displayStream.getVideoTracks()];
-  const displayAudio=displayStream.getAudioTracks();
-  if(displayAudio.length||micStream){
-   try{audioContext=new (window.AudioContext||window.webkitAudioContext)();const dest=audioContext.createMediaStreamDestination();
-    if(displayAudio.length){const s=audioContext.createMediaStreamSource(new MediaStream(displayAudio));s.connect(dest)}
-    if(micStream&&micStream.getAudioTracks().length){const m=audioContext.createMediaStreamSource(micStream);m.connect(dest)}
-    tracks.push(...dest.stream.getAudioTracks());
-   }catch(e){if(displayAudio.length)tracks.push(...displayAudio);else if(micStream)tracks.push(...micStream.getAudioTracks())}
-  }
-  const combined=new MediaStream(tracks);let mime='video/webm';if(!MediaRecorder.isTypeSupported(mime))mime='';if(!window.MediaRecorder)throw new Error('هذا المتصفح لا يدعم تسجيل الفيديو.');
-  recorder=new MediaRecorder(combined,mime?{mimeType:mime}:undefined);const chunks=[];recorder.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
-  recorder.onerror=()=>{recStatus.textContent='حدث خطأ أثناء التسجيل.'};
-  recorder.onstop=async()=>{clearTimeout(recordTimer);recordTimer=null;recordedBlob=new Blob(chunks,{type:recorder.mimeType||'video/webm'});stopTracks(displayStream);stopTracks(micStream);displayStream=null;micStream=null;if(audioContext){try{await audioContext.close()}catch(e){}audioContext=null}
-   if(recordedBlob.size>MAX_VIDEO){recordedBlob=null;recStatus.textContent='حجم التسجيل تجاوز 10 ميغابايت. حاول تسجيل مدة أقصر.';preview.hidden=true;$('discardRec').disabled=true;return}
-   if(!recordedBlob.size){recStatus.textContent='لم ينتج التسجيل ملف فيديو. حاول مرة أخرى.';return}
-   if(recordedUrl)URL.revokeObjectURL(recordedUrl);recordedUrl=URL.createObjectURL(recordedBlob);preview.src=recordedUrl;preview.hidden=false;preview.load();$('discardRec').disabled=false;
-   const hasMic=!!(recorder.stream&&recorder.stream.getAudioTracks().length);recStatus.textContent=`اكتمل التسجيل: ${(recordedBlob.size/1024/1024).toFixed(2)} ميغابايت. عاينه ثم اضغط إرسال للتحليل. ${hasMic?'تم تضمين مسار صوت متاح.':'لم يتوفر مسار صوت؛ تحقق من أذونات الصوت في المتصفح.'}`;
-   if(selected.length<MAX_FILES){const ext=recordedBlob.type.includes('mp4')?'mp4':'webm';const vf=new File([recordedBlob],`screen-recording-${Date.now()}.${ext}`,{type:recordedBlob.type||'video/webm'});selected.push(vf);renderFiles();recStatus.textContent+=' أُضيف التسجيل تلقائيًا إلى المرفقات.'}else recStatus.textContent+=' قائمة المرفقات ممتلئة؛ احذف مرفقًا ثم أعد التسجيل.';
-  };
-  displayStream.getVideoTracks()[0].addEventListener('ended',()=>{if(recorder&&recorder.state==='recording')recorder.stop()});
-  recorder.start(1000);$('stopRec').disabled=false;$('discardRec').disabled=true;$('startRec').textContent='● التسجيل جارٍ';recStatus.innerHTML='<span class="recording">● يتم تسجيل الشاشة الآن.</span> سيُوقف التسجيل تلقائيًا بعد 30 ثانية.';
-  recordTimer=setTimeout(()=>{if(recorder&&recorder.state==='recording')recorder.stop()},MAX_RECORD_MS);
- }catch(e){stopTracks(displayStream);stopTracks(micStream);displayStream=null;micStream=null;recStatus.textContent='تعذر بدء التسجيل: '+(e&&e.message?e.message:'قد لا يدعم المتصفح التقاط الشاشة أو لم يتم منح الإذن.')}finally{$('startRec').disabled=false;if(!recorder||recorder.state!=='recording')$('startRec').textContent='● بدء تسجيل الشاشة'}
+const API = 'https://ai-team-api.dilshad2101-8bb.workers.dev/';
+const MAX_FILES = 5, MAX_NORMAL = 4 * 1024 * 1024, MAX_VIDEO = 10 * 1024 * 1024, MAX_TOTAL = 12 * 1024 * 1024, MAX_RECORD_MS = 30000;
+const allowed = new Set(['text/plain','text/markdown','text/csv','application/json','image/png','image/jpeg','image/webp','video/mp4','video/webm']);
+const $ = id => document.getElementById(id);
+let selected = [], recorder = null, displayStream = null, micStream = null, audioContext = null, recordTimer = null, recordedBlob = null, recordedUrl = null, lastResult = '';
+
+function mimeFor(file) {
+  const byExt = {txt:'text/plain',md:'text/markdown',csv:'text/csv',json:'application/json',png:'image/png',jpg:'image/jpeg',jpeg:'image/jpeg',webp:'image/webp',mp4:'video/mp4',webm:'video/webm'};
+  const raw = (file.type || '').toLowerCase().split(';')[0];
+  if (allowed.has(raw)) return raw;
+  const ext = (file.name.split('.').pop() || '').toLowerCase();
+  return byExt[ext] || raw || 'application/octet-stream';
 }
-function stopRecording(){if(recorder&&recorder.state==='recording'){recorder.stop();$('stopRec').disabled=true;$('startRec').textContent='● بدء تسجيل الشاشة';recStatus.textContent='جارٍ إنهاء التسجيل وتجهيزه...'}}
-function discardRecording(){if(recordedUrl){URL.revokeObjectURL(recordedUrl);recordedUrl=null}const before=selected.length;selected=selected.filter(f=>!f.name.startsWith('screen-recording-'));renderFiles();recordedBlob=null;preview.pause();preview.removeAttribute('src');preview.load();preview.hidden=true;$('discardRec').disabled=true;recStatus.textContent=before===selected.length?'تم حذف المعاينة.':'تم حذف التسجيل من المرفقات.'}
-$('startRec').addEventListener('click',startRecording);$('stopRec').addEventListener('click',stopRecording);$('discardRec').addEventListener('click',discardRecording);
-$('send').onclick=async()=>{const prompt=$('prompt').value.trim();if(!prompt&&!selected.length){alert('اكتب المهمة أو اختر ملفًا أو سجّل الشاشة أولًا.');return}if(recorder&&recorder.state==='recording'){alert('أوقف التسجيل أولًا.');return}send.disabled=true;send.textContent='جارٍ تجهيز المرفقات...';result.className='result show';result.textContent='جارٍ قراءة الملفات وإرسالها إلى الخادم...';statusEl.textContent='الخادم: جارٍ الاتصال';try{const files=[];for(const f of selected){if(f.type.startsWith('image/')||f.type.startsWith('video/'))files.push({name:f.name,mimeType:f.type||'video/webm',data:await readBase64(f)});else files.push({name:f.name,mimeType:f.type,text:await readText(f)})}send.textContent='جارٍ التحليل عبر المراحل الست...';const response=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt,files})});let data;try{data=await response.json()}catch(e){throw new Error('رد الخادم غير مفهوم.')}if(!response.ok||!data.ok)throw new Error((data.error||'فشل الاتصال')+(data.details?'\n'+data.details:'')+(data.status?'\nرمز الخطأ: '+data.status:''));statusEl.textContent='الخادم: الاتصال ناجح';result.className='result show';result.replaceChildren();const head=document.createElement('div');head.className='outhead';const title=document.createElement('b');title.textContent='النتيجة النهائية';const copy=document.createElement('button');copy.className='copy';copy.textContent='نسخ النتيجة';copy.onclick=()=>copyText(data.text||'');head.append(title,copy);result.append(head);const finalText=document.createElement('div');finalText.className='stagebody';finalText.textContent=data.text||'لم تصل إجابة نصية';result.append(finalText);if(Array.isArray(data.stages)&&data.stages.length){const all=document.createElement('button');all.className='copy';all.style.marginTop='10px';all.textContent='نسخ جميع المراحل';all.onclick=()=>copyText(data.stages.map((s,i)=>(i+1)+'. '+s.title+'\n'+s.text).join('\n\n----------------\n\n')+'\n\nالنتيجة النهائية\n'+(data.text||''));result.append(all);data.stages.forEach((s,i)=>{const d=document.createElement('details');d.className='stage';const sum=document.createElement('summary');sum.textContent=(i+1)+'. '+(s.title||'مرحلة');const body=document.createElement('div');body.className='stagebody';body.textContent=s.text||'';const cp=document.createElement('button');cp.className='copy';cp.textContent='نسخ هذه المرحلة';cp.onclick=()=>copyText(s.text||'');body.prepend(cp);d.append(sum,body);result.append(d)})}}catch(e){statusEl.textContent='الخادم: حدث خطأ';showError(e.message||'خطأ غير معروف')}finally{send.disabled=false;send.textContent='إرسال المهمة للتحليل ←'}};
-fetch(API).then(r=>r.json()).then(d=>{if(d.ok)statusEl.textContent='الخادم متصل'}).catch(()=>{statusEl.textContent='الخادم: تعذر اختباره الآن'});
-window.addEventListener('beforeunload',()=>{stopTracks(displayStream);stopTracks(micStream);if(recordedUrl)URL.revokeObjectURL(recordedUrl)});
-</script></body></html>
+function totalSize(items) { return items.reduce((sum, file) => sum + file.size, 0); }
+function renderFiles() {
+  const list = $('filelist'); list.replaceChildren();
+  selected.forEach((file, index) => {
+    const row = document.createElement('div'); row.className = 'fileitem';
+    const label = document.createElement('span'); label.textContent = `${file.name} — ${(file.size/1024).toFixed(0)} KB`;
+    const remove = document.createElement('button'); remove.className = 'remove'; remove.type = 'button'; remove.textContent = 'إزالة';
+    remove.addEventListener('click', () => { selected.splice(index,1); renderFiles(); }); row.append(label,remove); list.append(row);
+  });
+}
+function addSelectedFile(file) {
+  const mime = mimeFor(file);
+  if (selected.length >= MAX_FILES) { alert('الحد الأقصى خمسة مرفقات. احذف ملفًا أولًا.'); return false; }
+  if (!allowed.has(mime)) { alert('نوع الملف غير مدعوم: ' + file.name); return false; }
+  if (mime.startsWith('video/') && file.size > MAX_VIDEO) { alert('حجم الفيديو أكبر من 10 ميغابايت؛ اختر فيديو أقصر.'); return false; }
+  if (!mime.startsWith('video/') && file.size > MAX_NORMAL) { alert('حجم الملف العادي أكبر من 4 ميغابايت.'); return false; }
+  if (mime.startsWith('video/') && selected.some(item => mimeFor(item).startsWith('video/'))) { alert('أرفق فيديو واحدًا فقط في كل طلب.'); return false; }
+  if (totalSize([...selected,file]) > MAX_TOTAL) { alert('مجموع المرفقات يجب ألا يتجاوز 12 ميغابايت.'); return false; }
+  if (selected.some(item => item.name === file.name && item.size === file.size)) { alert('هذا الملف مضاف بالفعل.'); return false; }
+  selected.push(file); renderFiles(); return true;
+}
+$('files').addEventListener('change', () => { for (const file of Array.from($('files').files || [])) addSelectedFile(file); $('files').value = ''; });
+$('clearFiles').addEventListener('click', () => { selected = []; renderFiles(); });
+$('clearPrompt').addEventListener('click', () => { $('prompt').value = ''; });
+function readBase64(file) { return new Promise((resolve,reject) => { const reader = new FileReader(); reader.onload = () => { const value = String(reader.result || ''); resolve(value.slice(value.indexOf(',') + 1)); }; reader.onerror = () => reject(new Error('تعذرت قراءة الملف: ' + file.name)); reader.readAsDataURL(file); }); }
+function readText(file) { return new Promise((resolve,reject) => { const reader = new FileReader(); reader.onload = () => resolve(String(reader.result || '')); reader.onerror = () => reject(new Error('تعذرت قراءة الملف: ' + file.name)); reader.readAsText(file); }); }
+async function copyText(text) {
+  try { await navigator.clipboard.writeText(text); alert('تم النسخ.'); }
+  catch (_) { const area = document.createElement('textarea'); area.value = text; document.body.append(area); area.select(); const ok = document.execCommand('copy'); area.remove(); alert(ok ? 'تم النسخ.' : 'تعذر النسخ؛ حدّد النص وانسخه يدويًا.'); }
+}
+function setResultError(message) { $('result').className = 'result show error'; $('result').textContent = 'لم تنجح العملية:\n' + message; $('stages').hidden = true; $('sources').hidden = true; $('copyResult').disabled = true; lastResult = ''; }
+function showSources(sources) {
+  const section = $('sources'), list = $('sourceList'); list.replaceChildren();
+  const valid = Array.isArray(sources) ? sources.filter(s => s && /^https?:\/\//i.test(s.url || '')) : [];
+  section.hidden = valid.length === 0;
+  for (const source of valid) { const a = document.createElement('a'); a.href = source.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = source.title || source.url; list.append(a); }
+}
+function showStages(stages) {
+  const area = $('stages'); area.replaceChildren();
+  // The sixth stage is already displayed as the main answer; showing it again would duplicate the result.
+  const visibleStages = Array.isArray(stages) ? stages.slice(0,5) : [];
+  if (!visibleStages.length) { area.hidden = true; return; }
+  const heading = document.createElement('h3'); heading.textContent = 'تفاصيل المراحل الخمس السابقة (اضغط لعرض أي مرحلة)'; heading.style.fontSize = '13px'; heading.style.margin = '14px 0 7px'; area.append(heading);
+  visibleStages.forEach(stage => { const details = document.createElement('details'); details.className = 'stage'; const summary = document.createElement('summary'); summary.textContent = stage.title || 'مرحلة التحليل'; const body = document.createElement('div'); body.className = 'stagebody'; body.textContent = stage.text || ''; details.append(summary,body); area.append(details); });
+  area.hidden = false;
+}
+function stopTracks(stream) { if (stream) stream.getTracks().forEach(track => { try { track.stop(); } catch (_) {} }); }
+async function startRecording() {
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) { $('recStatus').textContent = 'هذا المتصفح لا يدعم التقاط الشاشة. استخدم متصفحًا حديثًا يدعم مشاركة الشاشة.'; return; }
+  if (!window.MediaRecorder) { $('recStatus').textContent = 'هذا المتصفح لا يدعم تسجيل الفيديو.'; return; }
+  if (selected.length >= MAX_FILES) { $('recStatus').textContent = 'قائمة المرفقات ممتلئة. احذف ملفًا قبل التسجيل.'; return; }
+  if (selected.some(file => mimeFor(file).startsWith('video/'))) { $('recStatus').textContent = 'يوجد فيديو في المرفقات. احذفه قبل تسجيل فيديو آخر.'; return; }
+  $('startRec').disabled = true; $('startRec').textContent = 'جارٍ طلب إذن الشاشة...';
+  try {
+    displayStream = await navigator.mediaDevices.getDisplayMedia({video:{frameRate:{ideal:10,max:12}},audio:true});
+    try { micStream = await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}}); } catch (_) { micStream = null; }
+    const tracks = [...displayStream.getVideoTracks()]; const displayAudio = displayStream.getAudioTracks();
+    if (displayAudio.length || (micStream && micStream.getAudioTracks().length)) {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) throw new Error('AudioContext unavailable');
+        audioContext = new AudioCtx(); const destination = audioContext.createMediaStreamDestination();
+        if (displayAudio.length) audioContext.createMediaStreamSource(new MediaStream(displayAudio)).connect(destination);
+        if (micStream && micStream.getAudioTracks().length) audioContext.createMediaStreamSource(micStream).connect(destination);
+        tracks.push(...destination.stream.getAudioTracks());
+      } catch (_) { if (displayAudio.length) tracks.push(...displayAudio); else if (micStream) tracks.push(...micStream.getAudioTracks()); }
+    }
+    const combined = new MediaStream(tracks); const hasAudio = combined.getAudioTracks().length > 0;
+    let mime = 'video/webm'; if (!MediaRecorder.isTypeSupported(mime)) mime = '';
+    recorder = new MediaRecorder(combined, mime ? {mimeType:mime} : undefined); const chunks = [];
+    recorder.ondataavailable = event => { if (event.data && event.data.size) chunks.push(event.data); };
+    recorder.onerror = () => { $('recStatus').textContent = 'حدث خطأ أثناء التسجيل.'; };
+    recorder.onstop = async () => {
+      clearTimeout(recordTimer); recordTimer = null;
+      const blob = new Blob(chunks,{type:recorder.mimeType || 'video/webm'});
+      stopTracks(displayStream); stopTracks(micStream); displayStream = null; micStream = null;
+      if (audioContext) { try { await audioContext.close(); } catch (_) {} audioContext = null; }
+      if (!blob.size) { $('recStatus').textContent = 'لم ينتج التسجيل ملفًا. حاول مرة أخرى.'; return; }
+      if (blob.size > MAX_VIDEO) { $('recStatus').textContent = 'حجم التسجيل تجاوز 10 ميغابايت. حاول تسجيل مدة أقصر.'; recordedBlob = null; $('discardRec').disabled = true; $('preview').hidden = true; return; }
+      if (totalSize([...selected,blob]) > MAX_TOTAL) { $('recStatus').textContent = 'سيؤدي التسجيل إلى تجاوز مجموع 12 ميغابايت. احذف مرفقًا ثم سجّل مرة أخرى.'; recordedBlob = null; return; }
+      recordedBlob = blob;
+      if (recordedUrl) URL.revokeObjectURL(recordedUrl); recordedUrl = URL.createObjectURL(blob);
+      $('preview').src = recordedUrl; $('preview').hidden = false; $('preview').load(); $('discardRec').disabled = false;
+      $('recStatus').textContent = `اكتمل التسجيل (${(blob.size/1024/1024).toFixed(2)} ميغابايت). ${hasAudio ? 'يتضمن مسارًا صوتيًا متاحًا.' : 'لم يتوفر مسار صوت في التسجيل.'} أُضيف إلى المرفقات.`;
+      const extension = blob.type.toLowerCase().includes('mp4') ? 'mp4' : 'webm';
+      const videoFile = new File([blob],`screen-recording-${Date.now()}.${extension}`,{type:blob.type || 'video/webm'});
+      selected.push(videoFile); renderFiles();
+    };
+    displayStream.getVideoTracks()[0].addEventListener('ended', () => { if (recorder && recorder.state === 'recording') recorder.stop(); });
+    recorder.start(1000); $('stopRec').disabled = false; $('discardRec').disabled = true; $('startRec').textContent = '● التسجيل جارٍ';
+    $('recStatus').textContent = 'التسجيل جارٍ. سيُوقف تلقائيًا بعد 30 ثانية.';
+    recordTimer = setTimeout(() => { if (recorder && recorder.state === 'recording') recorder.stop(); },MAX_RECORD_MS);
+  } catch (error) {
+    stopTracks(displayStream); stopTracks(micStream); displayStream = null; micStream = null;
+    $('recStatus').textContent = 'تعذر بدء التسجيل: ' + (error && error.message ? error.message : 'قد لا يدعم المتصفح هذه الخاصية أو لم يتم منح الإذن.');
+  } finally { $('startRec').disabled = false; if (!recorder || recorder.state !== 'recording') $('startRec').textContent = '● بدء تسجيل الشاشة'; }
+}
+function stopRecording() { if (recorder && recorder.state === 'recording') { recorder.stop(); $('stopRec').disabled = true; $('startRec').textContent = '● بدء تسجيل الشاشة'; $('recStatus').textContent = 'جارٍ إنهاء التسجيل وتجهيزه...'; } }
+function discardRecording() {
+  if (recordedUrl) { URL.revokeObjectURL(recordedUrl); recordedUrl = null; }
+  selected = selected.filter(file => !file.name.startsWith('screen-recording-')); renderFiles(); recordedBlob = null;
+  $('preview').pause(); $('preview').removeAttribute('src'); $('preview').load(); $('preview').hidden = true; $('discardRec').disabled = true; $('recStatus').textContent = 'تم حذف التسجيل.';
+}
+$('startRec').addEventListener('click',startRecording); $('stopRec').addEventListener('click',stopRecording); $('discardRec').addEventListener('click',discardRecording);
+
+$('send').addEventListener('click', async () => {
+  const prompt = $('prompt').value.trim();
+  if (!prompt && !selected.length) { alert('اكتب السؤال أو اختر ملفًا أو سجّل الشاشة أولًا.'); return; }
+  if (recorder && recorder.state === 'recording') { alert('أوقف التسجيل أولًا.'); return; }
+  if (totalSize(selected) > MAX_TOTAL) { alert('مجموع المرفقات يتجاوز 12 ميغابايت.'); return; }
+  const mode = document.querySelector('input[name="mode"]:checked').value;
+  const send = $('send'); send.disabled = true; send.textContent = mode === 'team' ? 'جارٍ تنفيذ المراحل الست...' : 'جارٍ الحصول على إجابة...';
+  $('status').textContent = 'الخادم: جارٍ الاتصال'; $('result').className = 'result show'; $('result').textContent = mode === 'team' ? 'يعمل فريق المراجعة على المهمة. قد يستغرق ذلك وقتًا أطول لأن المراحل متتابعة...' : 'جارٍ إرسال السؤال إلى النموذج...';
+  $('sources').hidden = true; $('stages').hidden = true; $('copyResult').disabled = true; lastResult = '';
+  try {
+    const files = [];
+    for (const file of selected) {
+      const mimeType = mimeFor(file);
+      if (mimeType.startsWith('image/') || mimeType.startsWith('video/')) files.push({name:file.name,mimeType,data:await readBase64(file)});
+      else files.push({name:file.name,mimeType,text:await readText(file)});
+    }
+    const response = await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt,mode,files})});
+    let data; try { data = await response.json(); } catch (_) { throw new Error('رد الخادم غير مفهوم.'); }
+    if (!response.ok || !data.ok) throw new Error((data.error || 'تعذر تنفيذ الطلب.') + (data.status ? `\nرمز الخطأ: ${data.status}` : ''));
+    $('status').textContent = 'الخادم: الاتصال ناجح'; $('result').className = 'result show'; $('result').replaceChildren();
+    const heading = document.createElement('b'); heading.textContent = mode === 'team' ? 'الإجابة النهائية' : 'الإجابة'; $('result').append(heading);
+    const text = document.createElement('div'); text.style.marginTop = '8px'; text.textContent = data.text || 'لم تصل إجابة نصية.'; $('result').append(text);
+    lastResult = data.text || ''; $('copyResult').disabled = !lastResult;
+    showSources(data.sources); if (mode === 'team') showStages(data.stages); else $('stages').hidden = true;
+  } catch (error) {
+    $('status').textContent = 'الخادم: تعذر إكمال الطلب'; setResultError(error && error.message ? error.message : 'حدث خطأ غير معروف.');
+  } finally { send.disabled = false; send.textContent = 'إرسال'; }
+});
+$('copyResult').addEventListener('click',() => { if (lastResult) copyText(lastResult); });
+(async function checkHealth(){
+  try { const response = await fetch(API,{method:'GET'}); const data = await response.json(); $('status').textContent = response.ok && data.ok ? `الخادم: جاهز (${data.model || 'متصل'})` : 'الخادم: تعذر التحقق من الاتصال'; }
+  catch (_) { $('status').textContent = 'الخادم: لم يتم التحقق؛ جرّب إرسال سؤال'; }
+})();
+</script>
+</body>
+</html>
